@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="KIVRA Creative Studio — criação de sites, identidade visual e presença digital para marcas que querem ir além.">
+  <title>KIVRA Creative Studio — Criatividade que constrói presença</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050914;
+      --bg-soft: #081326;
+      --panel: rgba(12, 26, 48, .72);
+      --blue: #1687ff;
+      --blue-bright: #35a2ff;
+      --ice: #a9c9ee;
+      --white: #f5f8ff;
+      --muted: #9aa9bf;
+      --line: rgba(155, 190, 230, .15);
+      --max: 1180px;
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      background:
+        radial-gradient(ellipse at 82% 8%, rgba(0, 100, 255, .16), transparent 32%),
+        radial-gradient(ellipse at 4% 38%, rgba(0, 74, 160, .13), transparent 30%),
+        var(--bg);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+      opacity: .16;
+      background-image: linear-gradient(rgba(120,160,210,.06) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(120,160,210,.06) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    .container { width: min(var(--max), calc(100% - 44px)); margin: auto; }
+    .eyebrow {
+      color: var(--blue-bright); font-size: .76rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+    }
+    .section { padding: 112px 0; position: relative; }
+    .section-heading { max-width: 700px; margin-bottom: 46px; }
+    .section-heading h2 {
+      font: 700 clamp(2rem, 4vw, 3.5rem)/1.12 "Manrope", sans-serif;
+      letter-spacing: -.055em; margin: 13px 0 16px;
+    }
+    .section-heading p { color: var(--muted); max-width: 590px; }
+    .gradient-text {
+      background: linear-gradient(100deg, #fff 8%, #9bcaff 48%, #1687ff 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 11px;
+      border: 1px solid transparent; border-radius: 999px; padding: 14px 21px;
+      background: linear-gradient(105deg, #0877ed, #25a0ff);
+      color: white; font-weight: 700; font-size: .9rem; cursor: pointer;
+      box-shadow: 0 10px 35px rgba(0, 120, 255, .24);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 42px rgba(0, 130, 255, .38); }
+    .btn-ghost {
+      background: rgba(255,255,255,.025); border-color: var(--line);
+      box-shadow: none; color: #dbeaff;
+    }
+    .btn-ghost:hover { border-color: rgba(53,162,255,.55); }
+    .arrow { font-size: 1.1rem; transition: transform .2s; }
+    .btn:hover .arrow { transform: translateX(4px); }
+
+    /* Navegação */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(5, 9, 20, .72); backdrop-filter: blur(18px);
+      border-bottom: 1px solid transparent; transition: border-color .25s, background .25s;
+    }
+    .header.scrolled { border-color: var(--line); background: rgba(5,9,20,.92); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .brand-mark { width: 35px; height: 35px; }
+    .brand-name { font: 800 1.28rem/1 "Manrope", sans-serif; letter-spacing: .13em; }
+    .brand-sub { display: block; font-size: .48rem; letter-spacing: .24em; color: #aabbd1; margin-top: 4px; }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-links a { color: #bdc9d9; font-size: .86rem; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: white; }
+    .nav-cta { padding: 11px 17px; font-size: .82rem; }
+    .menu-toggle { display: none; border: 1px solid var(--line); color: white; background: transparent; border-radius: 12px; width: 44px; height: 44px; font-size: 1.35rem; }
+
+    /* Hero */
+    .hero { min-height: 790px; display: flex; align-items: center; padding: 150px 0 90px; position: relative; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 45px; }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero h1 { font: 800 clamp(3.1rem, 6.4vw, 6rem)/1.02 "Manrope", sans-serif; letter-spacing: -.075em; margin: 23px 0; }
+    .hero-copy > p { color: #aab8cb; font-size: 1.08rem; max-width: 540px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 48px; color: #8193aa; font-size: .8rem; }
+    .hero-note::before { content: ""; width: 34px; height: 1px; background: var(--blue); }
+    .hero-art { min-height: 470px; position: relative; display: grid; place-items: center; }
+    .orb {
+      position: absolute; width: min(440px, 90%); aspect-ratio: 1; border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, rgba(30,145,255,.3), rgba(0,52,120,.1) 42%, transparent 70%);
+      filter: blur(8px); animation: breathe 7s ease-in-out infinite alternate;
+    }
+    .orbit { position: absolute; width: 390px; max-width: 90%; aspect-ratio: 1; border: 1px solid rgba(58,151,255,.28); border-radius: 50%; transform: rotate(-28deg) scaleY(.48); }
+    .orbit.two { width: 500px; border-color: rgba(58,151,255,.13); transform: rotate(55deg) scaleY(.48); }
+    .hero-symbol {
+      width: min(290px, 65%); filter: drop-shadow(0 0 40px rgba(0,125,255,.4));
+      animation: float 6s ease-in-out infinite;
+    }
+    .floating-card {
+      position: absolute; border: 1px solid rgba(142,190,245,.2); background: rgba(7,18,36,.72);
+      backdrop-filter: blur(14px); border-radius: 15px; padding: 13px 16px;
+      color: #d9e9ff; box-shadow: 0 18px 55px rgba(0,0,0,.25); font-size: .78rem;
+    }
+    .floating-card strong { display: block; color: white; font-size: .9rem; }
+    .floating-card.one { top: 17%; right: 0; animation: float 5s ease-in-out infinite; }
+    .floating-card.two { bottom: 14%; left: 0; animation: float 6s ease-in-out infinite reverse; }
+    .status-dot { display: inline-block; width: 7px; height: 7px; background: #35d49a; border-radius: 50%; margin-right: 6px; box-shadow: 0 0 12px #35d49a; }
+
+    /* Serviços */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .service-card, .project-card, .step-card {
+      background: linear-gradient(145deg, rgba(15,32,57,.82), rgba(7,15,29,.72));
+      border: 1px solid var(--line); border-radius: var(--radius);
+      transition: transform .3s, border-color .3s, background .3s;
+    }
+    .service-card { padding: 30px; min-height: 265px; position: relative; overflow: hidden; }
+    .service-card::after {
+      content: ""; position: absolute; width: 150px; height: 150px; right: -80px; bottom: -90px;
+      background: var(--blue); filter: blur(80px); opacity: .2; transition: opacity .3s;
+    }
+    .service-card:hover, .project-card:hover, .step-card:hover { transform: translateY(-7px); border-color: rgba(53,162,255,.48); }
+    .service-card:hover::after { opacity: .55; }
+    .service-icon {
+      display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px;
+      color: #54b0ff; background: rgba(22,135,255,.1); border: 1px solid rgba(22,135,255,.2);
+      font-size: 1.35rem; margin-bottom: 27px;
+    }
+    .service-card h3 { font: 700 1.2rem "Manrope", sans-serif; margin-bottom: 10px; }
+    .service-card p { color: var(--muted); font-size: .91rem; }
+    .service-number { position: absolute; top: 27px; right: 28px; color: #52647d; font-size: .76rem; letter-spacing: .1em; }
+
+    /* Manifesto */
+    .manifesto { padding: 65px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: linear-gradient(90deg, transparent, rgba(13,76,145,.13), transparent); }
+    .manifesto p { text-align: center; max-width: 880px; margin: auto; font: 600 clamp(1.45rem, 3vw, 2.55rem)/1.35 "Manrope", sans-serif; letter-spacing: -.04em; }
+
+    /* Portfólio */
+    .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .project-card { overflow: hidden; }
+    .project-visual { min-height: 300px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 28px; }
+    .project-visual.medical { background: radial-gradient(circle at 75% 25%, #2c6b9d, transparent 40%), linear-gradient(135deg, #102b42, #071321 70%); }
+    .project-visual.sport { background: radial-gradient(circle at 80% 20%, rgba(255,190,0,.32), transparent 35%), linear-gradient(135deg, #24200e, #080b12 75%); }
+    .browser { width: 88%; min-height: 205px; background: rgba(3,9,18,.82); border: 1px solid rgba(255,255,255,.2); border-radius: 12px; box-shadow: 0 25px 60px rgba(0,0,0,.4); transform: perspective(900px) rotateY(-8deg) rotateX(3deg); overflow: hidden; }
+    .browser-top { height: 23px; display: flex; align-items: center; gap: 5px; padding: 0 10px; background: rgba(255,255,255,.07); }
+    .browser-top i { width: 5px; height: 5px; border-radius: 50%; background: #69809b; }
+    .browser-content { padding: 25px; }
+    .browser-content small { color: #58adff; letter-spacing: .15em; font-size: .56rem; }
+    .browser-content b { display: block; font: 800 clamp(1.3rem, 3vw, 2.1rem)/1.1 "Manrope"; margin: 10px 0; }
+    .browser-content span { color: #a8b8cb; font-size: .7rem; }
+    .project-visual.sport .browser-content b { color: #ffd33d; text-transform: uppercase; letter-spacing: .04em; }
+    .project-info { padding: 24px 26px 27px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    .project-info h3 { font: 700 1.12rem "Manrope"; }
+    .project-info p { color: var(--muted); font-size: .83rem; margin-top: 5px; }
+    .project-arrow { color: var(--blue-bright); font-size: 1.5rem; }
+
+    /* Processo */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .step-card { padding: 25px 22px; }
+    .step-card .step { color: var(--blue-bright); font: 700 .8rem "Manrope"; letter-spacing: .12em; }
+    .step-card h3 { font: 700 1.05rem "Manrope"; margin: 19px 0 9px; }
+    .step-card p { color: var(--muted); font-size: .85rem; }
+
+    /* CTA / formulário */
+    .contact-wrap {
+      display: grid; grid-template-columns: .9fr 1.1fr; gap: 45px; align-items: start;
+      padding: 42px; border: 1px solid rgba(70,150,240,.25); border-radius: 28px;
+      background: radial-gradient(circle at 5% 5%, rgba(0,116,255,.18), transparent 42%), rgba(8,20,38,.8);
+      box-shadow: 0 25px 90px rgba(0,0,0,.22);
+    }
+    .contact-copy h2 { font: 800 clamp(2.2rem, 4vw, 3.5rem)/1.08 "Manrope"; letter-spacing: -.06em; margin: 14px 0 18px; }
+    .contact-copy p { color: var(--muted); }
+    .contact-points { margin-top: 28px; display: grid; gap: 12px; color: #c3d2e5; font-size: .88rem; }
+    .contact-points span::before { content: "✦"; color: var(--blue-bright); margin-right: 10px; }
+    .lead-form { display: grid; gap: 14px; }
+    .field { display: grid; gap: 7px; }
+    .field label { color: #c5d3e5; font-size: .82rem; font-weight: 600; }
+    .field input, .field textarea, .field select {
+      width: 100%; border: 1px solid rgba(155,190,230,.18); border-radius: 12px;
+      background: rgba(2,8,17,.55); color: white; padding: 14px 15px; outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(22,135,255,.12); }
+    .field input::placeholder, .field textarea::placeholder { color: #65758b; }
+    .field select option { background: #081326; }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .form-note { color: #788ba4; font-size: .74rem; }
+
+    /* Rodapé */
+    footer { padding: 35px 0 28px; border-top: 1px solid var(--line); }
+    .footer-main { display: flex; justify-content: space-between; align-items: center; gap: 25px; padding-bottom: 28px; }
+    .footer-tagline { color: var(--muted); font-size: .84rem; margin-top: 9px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; color: #aab8ca; font-size: .83rem; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 15px; padding-top: 20px; border-top: 1px solid var(--line); color: #718198; font-size: .75rem; }
+
+    /* Animações e acessibilidade */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+    @keyframes breathe { from { transform: scale(.92); opacity: .65; } to { transform: scale(1.08); opacity: 1; } }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(22,135,255,.35); } 50% { box-shadow: 0 0 0 12px rgba(22,135,255,0); } }
+    .hero .btn:not(.btn-ghost) { animation: pulse 3s infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { gap: 17px; }
+      .hero-grid { grid-template-columns: 1fr .8fr; gap: 15px; }
+      .hero-art { min-height: 380px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-wrap { gap: 28px; padding: 30px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 34px, var(--max)); }
+      .section { padding: 82px 0; }
+      .nav { min-height: 70px; }
+      .menu-toggle { display: block; }
+      .nav-cta { display: none; }
+      .nav-links {
+        display: none; position: absolute; top: 69px; left: 0; right: 0; padding: 20px 24px 25px;
+        background: rgba(5,9,20,.98); border-bottom: 1px solid var(--line);
+        flex-direction: column; align-items: stretch; gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 13px 0; }
+      .hero { min-height: auto; padding: 132px 0 65px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: clamp(3rem, 13vw, 4.6rem); }
+      .hero-copy > p { font-size: 1rem; }
+      .hero-art { min-height: 320px; margin-top: 8px; }
+      .hero-symbol { width: 210px; }
+      .floating-card.one { right: 1%; top: 10%; }
+      .floating-card.two { left: 1%; bottom: 8%; }
+      .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 230px; }
+      .project-visual { min-height: 255px; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .contact-wrap { grid-template-columns: 1fr; padding: 25px 20px; }
+      .footer-main, .footer-bottom { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      .process-grid { grid-template-columns: 1fr; }
+      .hero-actions .btn { width: 100%; }
+      .footer-links { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="KIVRA Creative Studio — início">
+        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M13 10H34V43L68 10H94L55 48L96 90H68L34 57V90H13Z" fill="url(#logoGradient)"/>
+          <path d="M43 57L61 40L80 59L62 77Z" fill="#061326"/>
+          <defs><linearGradient id="logoGradient" x1="10" y1="10" x2="95" y2="90"><stop stop-color="#48B2FF"/><stop offset="1" stop-color="#0874F2"/></linearGradient></defs>
+        </svg>
+        <span><span class="brand-name">KIVRA</span><span class="brand-sub">CREATIVE STUDIO</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a class="btn nav-cta" href="#contato">Peça uma prévia <span class="arrow">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Estratégia · Design · Tecnologia</span>
+          <h1>Criatividade que constrói <span class="gradient-text">presença.</span></h1>
+          <p>Criamos experiências digitais que conectam marcas a pessoas. Sites, identidade visual e soluções criativas para negócios que querem ir além.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contato">Peça uma prévia gratuita <span class="arrow">→</span></a>
+            <a class="btn btn-ghost" href="#portfolio">Conheça nosso trabalho <span class="arrow">↘</span></a>
+          </div>
+          <div class="hero-note">Design com intenção. Presença com propósito.</div>
+        </div>
+        <div class="hero-art reveal" aria-label="Símbolo geométrico da KIVRA">
+          <div class="orb"></div><div class="orbit"></div><div class="orbit two"></div>
+          <svg class="hero-symbol" viewBox="0 0 100 100" aria-hidden="true">
+            <defs><linearGradient id="heroK" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#65C2FF"/><stop offset=".55" stop-color="#1687FF"/><stop offset="1" stop-color="#0752C7"/></linearGradient></defs>
+            <path d="M10 8H32V42L68 8H94L53 48L96 92H67L32 57V92H10Z" fill="url(#heroK)"/>
+            <path d="M44 57L62 40L81 60L63 78Z" fill="#071323"/>
+          </svg>
+          <div class="floating-card one"><span class="status-dot"></span>Ideias em movimento<strong>Digital first</strong></div>
+          <div class="floating-card two">01 / 03<strong>Design · Identidade · Web</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">O que fazemos</span>
+          <h2>Soluções digitais para marcas que querem <span class="gradient-text">ir além.</span></h2>
+          <p>Unimos pensamento estratégico e direção visual para criar experiências coerentes, funcionais e memoráveis.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-number">01 / WEB</span><div class="service-icon">⌘</div>
+            <h3>Web Design</h3><p>Sites institucionais, landing pages e páginas comerciais com design responsivo, navegação intuitiva e foco em conversão.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-number">02 / BRAND</span><div class="service-icon">◇</div>
+            <h3>Identidade visual</h3><p>Construção de marcas com conceito, personalidade e consistência visual em cada ponto de contato.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-number">03 / DIGITAL</span><div class="service-icon">↗</div>
+            <h3>Presença digital</h3><p>Uma experiência digital alinhada ao posicionamento do seu negócio para apresentar sua marca com clareza e profissionalismo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <div class="container reveal">
+        <p>Não é apenas sobre estar na internet. É sobre criar uma presença que <span class="gradient-text">representa o valor da sua marca.</span></p>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Projetos selecionados</span>
+          <h2>Ideias que ganham <span class="gradient-text">forma.</span></h2>
+          <p>Alguns projetos que fazem parte da nossa jornada de criação digital.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="project-card reveal">
+            <div class="project-visual medical">
+              <div class="browser">
+                <div class="browser-top"><i></i><i></i><i></i></div>
+                <div class="browser-content">
+                  <small>SAÚDE · MOVIMENTO · PERFORMANCE</small>
+                  <b>Dra. Ildélia</b>
+                  <span>Uma presença digital para cuidado e movimento.</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div><h3>Dra. Ildélia</h3><p>Projeto digital · Saúde e performance</p></div>
+              <span class="project-arrow">↗</span>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-visual sport">
+              <div class="browser">
+                <div class="browser-top"><i></i><i></i><i></i></div>
+                <div class="browser-content">
+                  <small>ARAÇATUBA · 2027</small>
+                  <b>HYROX<br>GAMES 2027</b>
+                  <span>Força. Resistência. Superação.</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div><h3>HYROX GAMES 2027</h3><p>Experiência digital · Evento esportivo</p></div>
+              <span class="project-arrow">↗</span>
+            </div>
+          </article>
+        </div>
+        <p class="form-note" style="margin-top:18px">Projetos em desenvolvimento e construção de portfólio.</p>
+      </div>
+    </section>
+
+    <section class="section" id="processo">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Nosso processo</span>
+          <h2>Da primeira ideia à <span class="gradient-text">presença digital.</span></h2>
+          <p>Um caminho claro, colaborativo e pensado para transformar objetivos em soluções.</p>
+        </div>
+        <div class="process-grid">
+          <article class="step-card reveal"><span class="step">ETAPA 01</span><h3>Imersão</h3><p>Entendemos seu negócio, seu público e o que sua marca precisa comunicar.</p></article>
+          <article class="step-card reveal"><span class="step">ETAPA 02</span><h3>Direção criativa</h3><p>Definimos conceito, estrutura e linguagem visual para o projeto.</p></article>
+          <article class="step-card reveal"><span class="step">ETAPA 03</span><h3>Desenvolvimento</h3><p>Transformamos a ideia em uma experiência digital responsiva e funcional.</p></article>
+          <article class="step-card reveal"><span class="step">ETAPA 04</span><h3>Publicação</h3><p>Revisamos os detalhes e preparamos o projeto para chegar ao mundo.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="contact-wrap reveal">
+          <div class="contact-copy">
+            <span class="eyebrow">Vamos conversar?</span>
+            <h2>Sua próxima ideia pode começar <span class="gradient-text">aqui.</span></h2>
+            <p>Conte um pouco sobre seu negócio. Vamos entender o que você precisa e preparar o próximo passo para sua presença digital.</p>
+            <div class="contact-points">
+              <span>Atendimento personalizado</span>
+              <span>Prévia inicial sem compromisso</span>
+              <span>Projetos pensados para cada marca</span>
+            </div>
+          </div>
+          <form class="lead-form" id="leadForm">
+            <div class="field"><label for="name">Seu nome</label><input id="name" name="name" placeholder="Como podemos chamar você?" required></div>
+            <div class="field"><label for="business">Nome do negócio</label><input id="business" name="business" placeholder="Nome da sua marca ou empresa"></div>
+            <div class="field"><label for="service">O que você procura?</label>
+              <select id="service" name="service" required>
+                <option value="">Selecione uma opção</option>
+                <option>Criação de site</option><option>Landing page</option><option>Identidade visual</option><option>Presença digital</option><option>Quero conversar sobre uma ideia</option>
+              </select>
+            </div>
+            <div class="field"><label for="message">Conte um pouco sobre seu projeto</label><textarea id="message" name="message" placeholder="O que você gostaria de criar?"></textarea></div>
+            <button class="btn" type="submit">Solicitar minha prévia <span class="arrow">→</span></button>
+            <p class="form-note">Ao enviar, você será direcionado ao WhatsApp para concluir sua solicitação.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <a class="brand" href="#inicio">
+            <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M13 10H34V43L68 10H94L55 48L96 90H68L34 57V90H13Z" fill="#1687ff"/><path d="M43 57L61 40L80 59L62 77Z" fill="#061326"/></svg>
+            <span><span class="brand-name">KIVRA</span><span class="brand-sub">CREATIVE STUDIO</span></span>
+          </a>
+          <p class="footer-tagline">Criatividade que constrói presença.</p>
+        </div>
+        <div class="footer-links"><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#processo">Processo</a><a href="#contato">Contato</a></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> KIVRA Creative Studio. Todos os direitos reservados.</span><span>Estratégia, design e tecnologia.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    // IMPORTANTE: substitua pelo WhatsApp do estúdio, com código do país e DDD.
+    // Exemplo: 5511999999999 (somente números, sem +, espaços ou traços).
+    const WHATSAPP_NUMBER = "55SEUNUMERO";
+
+    const header = document.getElementById("header");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 20);
+    });
+
+    menuToggle.addEventListener("click", () => {
+      const opened = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(opened));
+      menuToggle.textContent = opened ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("leadForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const name = form.get("name");
+      const business = form.get("business") || "Não informado";
+      const service = form.get("service");
+      const message = form.get("message") || "Não informado";
+      const text = `Olá! Vim pelo site da KIVRA Creative Studio e gostaria de solicitar uma prévia.%0A%0A*Nome:* ${encodeURIComponent(name)}%0A*Negócio:* ${encodeURIComponent(business)}%0A*Serviço:* ${encodeURIComponent(service)}%0A*Projeto:* ${encodeURIComponent(message)}`;
+
+      if (!/^55\d{10,13}$/.test(WHATSAPP_NUMBER)) {
+        alert("O site está pronto! Para ativar o formulário, substitua 55SEUNUMERO no código pelo WhatsApp da KIVRA, com DDD e apenas números.");
+        return;
+      }
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>

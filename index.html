@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0B1B3D">
-<meta name="description" content="KIVRA Estúdio Digital. Sites, landing pages e experiências digitais com identidade.">
-<title>KIVRA | Estúdio Digital</title>
+<meta name="description" content="KIVRA Agência Digital. Desenvolvimento de sites, gestão de redes sociais, criação de conteúdo e marketing digital.">
+<title>KIVRA | Agência Digital</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@ button:focus-visible,a:focus-visible{
 }
 ::selection{background:var(--accent);color:var(--dark)}
 .container{width:min(1160px,calc(100% - 40px));margin:auto}
-.section{padding:115px 0}
+.section{padding:110px 0}
 .eyebrow{
   font-size:10px;
   font-weight:700;
@@ -53,7 +53,7 @@ button:focus-visible,a:focus-visible{
 }
 .section-title{
   font-family:"Manrope",sans-serif;
-  font-size:clamp(36px,5.5vw,68px);
+  font-size:clamp(35px,5.5vw,68px);
   line-height:1.15;
   font-weight:700;
   letter-spacing:-2.5px;
@@ -67,7 +67,7 @@ button:focus-visible,a:focus-visible{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:25px;
+  gap:20px;
   padding:17px 23px;
   border:1px solid transparent;
   font-size:11px;
@@ -82,7 +82,7 @@ button:focus-visible,a:focus-visible{
 .btn-line{border-color:rgba(169,193,213,.4)}
 .btn-line:hover{background:var(--white);color:var(--dark)}
 
-/* LOGOTIPO KIVRA EM SVG */
+/* MARCA */
 .brand{
   display:inline-flex;
   align-items:center;
@@ -96,7 +96,7 @@ button:focus-visible,a:focus-visible{
 .brand-name{
   display:flex;
   flex-direction:column;
-  gap:2px;
+  gap:3px;
 }
 .brand-name strong{
   font-family:"Manrope",sans-serif;
@@ -111,20 +111,16 @@ button:focus-visible,a:focus-visible{
   text-transform:uppercase;
   font-weight:600;
 }
+.brand-mark{color:var(--white)}
 .brand-mark .mark-primary{fill:currentColor}
 .brand-mark .mark-accent{fill:var(--accent)}
 .brand-mark .mark-dots{fill:var(--bg)}
-.brand-mark{color:var(--white)}
-.brand-dark{color:var(--ink)}
-.brand-dark .brand-mark{color:var(--ink)}
-.brand-dark .mark-dots{fill:var(--white)}
 
-/* HEADER */
+/* CABEÇALHO */
 header{
   position:fixed;
   z-index:100;
-  top:0;
-  left:0;
+  top:0;left:0;
   width:100%;
   height:78px;
   background:rgba(6,12,25,.94);
@@ -138,7 +134,7 @@ header{
   align-items:center;
   justify-content:space-between;
 }
-nav{display:flex;align-items:center;gap:32px}
+nav{display:flex;align-items:center;gap:30px}
 nav a{
   font-size:12px;
   color:#D5E1F0;
@@ -158,7 +154,7 @@ nav a:hover{color:var(--accent-soft)}
   font-size:27px;
 }
 
-/* HERO */
+/* APRESENTAÇÃO */
 .hero{
   min-height:100svh;
   position:relative;
@@ -183,10 +179,8 @@ nav a:hover{color:var(--accent-soft)}
 }
 .hero-glow{
   position:absolute;
-  width:650px;
-  height:650px;
-  right:-260px;
-  top:8%;
+  width:650px;height:650px;
+  right:-260px;top:8%;
   z-index:-2;
   background:radial-gradient(circle,rgba(127,163,194,.12),transparent 67%);
   animation:glowMove 13s ease-in-out infinite alternate;
@@ -194,10 +188,8 @@ nav a:hover{color:var(--accent-soft)}
 }
 .orbit{
   position:absolute;
-  right:-250px;
-  top:12%;
-  width:650px;
-  height:650px;
+  right:-250px;top:12%;
+  width:650px;height:650px;
   border:1px solid rgba(127,163,194,.12);
   border-radius:50%;
   z-index:-1;
@@ -216,7 +208,7 @@ nav a:hover{color:var(--accent-soft)}
   display:grid;
   grid-template-areas:"slide";
   align-items:center;
-  min-height:430px;
+  min-height:440px;
 }
 .hero-slide{
   grid-area:slide;
@@ -235,23 +227,28 @@ nav a:hover{color:var(--accent-soft)}
 .hero-slide h1{
   font-family:"Manrope",sans-serif;
   font-weight:700;
-  font-size:clamp(48px,7.5vw,96px);
+  font-size:clamp(46px,7.3vw,94px);
   line-height:1.12;
   letter-spacing:-4px;
   margin:28px 0;
-  max-width:1050px;
+  max-width:1080px;
 }
 .hero-slide h1 em{
   color:var(--accent-soft);
   font-style:normal;
 }
 .hero-slide p{
-  max-width:540px;
+  max-width:570px;
   font-size:16px;
   line-height:1.9;
   color:var(--muted);
 }
-.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:36px}
+.hero-actions{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:36px;
+}
 .hero-controls{
   display:flex;
   align-items:center;
@@ -275,8 +272,7 @@ nav a:hover{color:var(--accent-soft)}
 .progress-fill.running{animation:slideProgress 6s linear forwards}
 .hero-arrows{display:flex;gap:9px}
 .arrow-btn{
-  width:39px;
-  height:39px;
+  width:39px;height:39px;
   border:1px solid rgba(255,255,255,.25);
   background:transparent;
   color:var(--white);
@@ -288,7 +284,11 @@ nav a:hover{color:var(--accent-soft)}
   color:var(--dark);
   border-color:var(--accent);
 }
-.hero-bottom{position:absolute;bottom:30px;left:0;width:100%}
+.hero-bottom{
+  position:absolute;
+  bottom:30px;left:0;
+  width:100%;
+}
 .hero-bottom .container{
   display:flex;
   justify-content:space-between;
@@ -299,7 +299,7 @@ nav a:hover{color:var(--accent-soft)}
   text-transform:uppercase;
 }
 
-/* MARQUEE */
+/* FAIXA ANIMADA */
 .marquee{
   overflow:hidden;
   border-top:1px solid var(--line);
@@ -322,10 +322,16 @@ nav a:hover{color:var(--accent-soft)}
   letter-spacing:3px;
   color:#C0D0E4;
 }
-.marquee-group b{color:var(--accent-soft);font-size:16px}
+.marquee-group b{
+  color:var(--accent-soft);
+  font-size:16px;
+}
 
 /* SOBRE */
-.about{background:var(--white);color:var(--ink)}
+.about{
+  background:var(--white);
+  color:var(--ink);
+}
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -360,32 +366,44 @@ nav a:hover{color:var(--accent-soft)}
   margin-bottom:55px;
 }
 .services-header h2{margin-top:20px}
-.services-header p{max-width:370px;font-size:14px}
+.services-header p{
+  max-width:390px;
+  font-size:14px;
+}
 .service-list{border-top:1px solid var(--line)}
 .service{
   display:grid;
   grid-template-columns:55px 1fr 1fr 30px;
   gap:20px;
   align-items:center;
-  padding:40px 0;
+  padding:37px 0;
   border-bottom:1px solid var(--line);
   transition:padding .35s;
 }
 .service:hover{padding-left:10px}
-.service-num{color:var(--accent-soft);font-size:12px}
+.service-num{
+  color:var(--accent-soft);
+  font-size:12px;
+}
 .service h3{
   font-family:"Manrope",sans-serif;
   font-weight:600;
-  font-size:clamp(25px,3vw,37px);
+  font-size:clamp(24px,3vw,36px);
   letter-spacing:-1px;
 }
-.service p{color:var(--muted);font-size:13px;line-height:1.9}
+.service p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.9;
+}
 .service-arrow{
   font-size:23px;
   color:var(--accent-soft);
   transition:transform .35s;
 }
-.service:hover .service-arrow{transform:translate(4px,-4px)}
+.service:hover .service-arrow{
+  transform:translate(4px,-4px);
+}
 
 /* FRASE DE DESTAQUE */
 .statement{
@@ -403,7 +421,10 @@ nav a:hover{color:var(--accent-soft)}
   max-width:950px;
   margin:auto;
 }
-.statement em{color:var(--accent-soft);font-style:normal}
+.statement em{
+  color:var(--accent-soft);
+  font-style:normal;
+}
 
 /* PORTFÓLIO */
 .portfolio{
@@ -423,8 +444,7 @@ nav a:hover{color:var(--accent-soft)}
 }
 .portfolio-nav{display:flex;gap:10px}
 .portfolio-nav button{
-  width:45px;
-  height:45px;
+  width:45px;height:45px;
   border:1px solid #B7C9DD;
   background:transparent;
   color:var(--ink);
@@ -435,7 +455,10 @@ nav a:hover{color:var(--accent-soft)}
   background:var(--bg);
   color:white;
 }
-.portfolio-window{overflow:hidden;touch-action:pan-y}
+.portfolio-window{
+  overflow:hidden;
+  touch-action:pan-y;
+}
 .portfolio-track{
   display:flex;
   transition:transform .75s cubic-bezier(.22,1,.36,1);
@@ -461,12 +484,10 @@ nav a:hover{color:var(--accent-soft)}
 .project-visual:before{
   content:"";
   position:absolute;
-  width:430px;
-  height:430px;
+  width:430px;height:430px;
   border:1px solid rgba(255,255,255,.12);
   border-radius:50%;
-  right:-130px;
-  top:-120px;
+  right:-130px;top:-120px;
 }
 .browser{
   width:min(85%,760px);
@@ -492,8 +513,7 @@ nav a:hover{color:var(--accent-soft)}
   padding:0 12px;
 }
 .browser-top i{
-  width:7px;
-  height:7px;
+  width:7px;height:7px;
   background:#B7B9BD;
   border-radius:50%;
 }
@@ -509,13 +529,11 @@ nav a:hover{color:var(--accent-soft)}
 .medical-preview:before{
   content:"";
   position:absolute;
-  width:250px;
-  height:250px;
+  width:250px;height:250px;
   border-radius:50%;
   background:rgba(59,130,246,.12);
   filter:blur(65px);
-  right:8%;
-  top:15%;
+  right:8%;top:15%;
 }
 .medical-nav{
   height:53px;
@@ -540,7 +558,12 @@ nav a:hover{color:var(--accent-soft)}
   letter-spacing:1.3px;
   margin-top:4px;
 }
-.medical-menu{display:flex;gap:18px;color:#C0D0E2;font-size:9px}
+.medical-menu{
+  display:flex;
+  gap:18px;
+  color:#C0D0E2;
+  font-size:9px;
+}
 .medical-main{
   height:calc(100% - 53px);
   display:grid;
@@ -604,8 +627,7 @@ nav a:hover{color:var(--accent-soft)}
 }
 .thermal-label{
   position:absolute;
-  top:13px;
-  left:13px;
+  top:13px;left:13px;
   font-size:8px;
   letter-spacing:1.2px;
   color:#9DC7E9;
@@ -629,8 +651,7 @@ nav a:hover{color:var(--accent-soft)}
 }
 .scan-line{
   position:absolute;
-  width:100%;
-  height:2px;
+  width:100%;height:2px;
   top:20%;
   background:#78C7FF;
   box-shadow:0 0 12px #78C7FF;
@@ -638,8 +659,7 @@ nav a:hover{color:var(--accent-soft)}
 }
 .thermal-reading{
   position:absolute;
-  bottom:12px;
-  right:13px;
+  bottom:12px;right:13px;
   font-size:9px;
   color:#9DC7E9;
 }
@@ -650,8 +670,7 @@ nav a:hover{color:var(--accent-soft)}
 }
 .thermal-disclaimer{
   position:absolute;
-  bottom:10px;
-  left:12px;
+  bottom:10px;left:12px;
   font-size:7px;
   color:#91A7C0;
   max-width:55%;
@@ -728,8 +747,7 @@ nav a:hover{color:var(--accent-soft)}
   margin-top:30px;
 }
 .portfolio-dot{
-  width:8px;
-  height:8px;
+  width:8px;height:8px;
   border:0;
   border-radius:50%;
   background:#B4C7DC;
@@ -763,10 +781,8 @@ nav a:hover{color:var(--accent-soft)}
 .process-card:before{
   content:"";
   position:absolute;
-  top:-1px;
-  left:0;
-  height:1px;
-  width:0;
+  top:-1px;left:0;
+  height:1px;width:0;
   background:var(--accent);
   transition:width .7s;
 }
@@ -795,7 +811,10 @@ nav a:hover{color:var(--accent-soft)}
   text-align:center;
 }
 .contact .eyebrow{color:#476C8F}
-.contact h2{max-width:850px;margin:25px auto}
+.contact h2{
+  max-width:850px;
+  margin:25px auto;
+}
 .contact h2 em{color:#476C8F}
 .contact p{
   max-width:540px;
@@ -814,7 +833,10 @@ nav a:hover{color:var(--accent-soft)}
 }
 
 /* RODAPÉ */
-footer{padding:65px 0 30px;background:var(--dark)}
+footer{
+  padding:65px 0 30px;
+  background:var(--dark);
+}
 .footer-main{
   display:flex;
   justify-content:space-between;
@@ -829,14 +851,21 @@ footer{padding:65px 0 30px;background:var(--dark)}
   margin-top:15px;
 }
 .footer-links{display:flex;gap:65px}
-.footer-links div{display:flex;flex-direction:column;gap:15px}
+.footer-links div{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
 .footer-links strong{
   color:var(--accent-soft);
   font-size:11px;
   letter-spacing:2px;
   text-transform:uppercase;
 }
-.footer-links a{color:var(--muted);font-size:13px}
+.footer-links a{
+  color:var(--muted);
+  font-size:13px;
+}
 .footer-links a:hover{color:var(--white)}
 .footer-bottom{
   border-top:1px solid var(--line);
@@ -870,7 +899,10 @@ footer{padding:65px 0 30px;background:var(--dark)}
   transition:opacity .9s cubic-bezier(.22,1,.36,1),
              transform .9s cubic-bezier(.22,1,.36,1);
 }
-.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
 
 /* RESPONSIVIDADE */
 @media(max-width:900px){
@@ -891,9 +923,7 @@ footer{padding:65px 0 30px;background:var(--dark)}
   nav{
     display:none;
     position:absolute;
-    top:70px;
-    left:0;
-    right:0;
+    top:70px;left:0;right:0;
     background:var(--bg);
     padding:30px 22px 40px;
     flex-direction:column;
@@ -904,16 +934,25 @@ footer{padding:65px 0 30px;background:var(--dark)}
   nav.open{display:flex}
   nav a{font-size:15px}
   .nav-cta{text-align:center}
-  .hero{min-height:100svh;padding:115px 0 105px}
-  .hero-slider{min-height:410px}
+  .hero{
+    min-height:100svh;
+    padding:115px 0 105px;
+  }
+  .hero-slider{min-height:440px}
   .hero-slide h1{
-    font-size:clamp(43px,10.8vw,68px);
+    font-size:clamp(42px,10.6vw,68px);
     letter-spacing:-2px;
   }
   .hero-slide p{font-size:14px}
-  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
   .hero-controls{gap:13px;margin-top:25px}
-  .hero-bottom .container{flex-direction:column;gap:7px}
+  .hero-bottom .container{
+    flex-direction:column;
+    gap:7px;
+  }
   .orbit{right:-480px}
   .about-grid{grid-template-columns:1fr}
   .services-header{display:block}
@@ -958,8 +997,8 @@ footer{padding:65px 0 30px;background:var(--dark)}
   .footer-bottom{flex-direction:column}
 }
 @media(max-width:380px){
-  .hero-slide h1{font-size:41px}
-  .hero-slider{min-height:440px}
+  .hero-slide h1{font-size:40px}
+  .hero-slider{min-height:460px}
   .process-grid{grid-template-columns:1fr}
   .project-info{flex-direction:column}
 }
@@ -977,7 +1016,7 @@ footer{padding:65px 0 30px;background:var(--dark)}
 
 <body>
 
-<!-- SÍMBOLO REUTILIZÁVEL -->
+<!-- SÍMBOLO KIVRA -->
 <svg xmlns="http://www.w3.org/2000/svg"
      width="0" height="0"
      style="position:absolute;overflow:hidden"
@@ -1001,13 +1040,13 @@ footer{padding:65px 0 30px;background:var(--dark)}
 <!-- CABEÇALHO -->
 <header>
 <div class="container header-inner">
-  <a href="#inicio" class="brand" aria-label="KIVRA Estúdio Digital, início">
+  <a href="#inicio" class="brand" aria-label="KIVRA Agência Digital, início">
     <svg class="brand-symbol brand-mark" viewBox="0 0 120 120" aria-hidden="true">
       <use href="#kivra-mark"></use>
     </svg>
     <span class="brand-name">
       <strong>KIVRA</strong>
-      <small>ESTÚDIO DIGITAL</small>
+      <small>AGÊNCIA DIGITAL</small>
     </span>
   </a>
 
@@ -1017,7 +1056,7 @@ footer{padding:65px 0 30px;background:var(--dark)}
     aria-controls="nav">☰</button>
 
   <nav id="nav" aria-label="Menu principal">
-    <a href="#sobre">O estúdio</a>
+    <a href="#sobre">A agência</a>
     <a href="#servicos">Serviços</a>
     <a href="#projetos">Projetos</a>
     <a href="#processo">Processo</a>
@@ -1028,7 +1067,7 @@ footer{padding:65px 0 30px;background:var(--dark)}
 
 <main>
 
-<!-- APRESENTAÇÃO -->
+<!-- HERO -->
 <section class="hero" id="inicio">
 <div class="tech-grid"></div>
 <div class="hero-glow"></div>
@@ -1038,29 +1077,29 @@ footer{padding:65px 0 30px;background:var(--dark)}
 <div class="hero-slider" aria-label="Apresentação KIVRA">
 
   <div class="hero-slide active" aria-hidden="false">
-    <div class="eyebrow">KIVRA · Estúdio Digital</div>
+    <div class="eyebrow">KIVRA · Agência Digital</div>
     <h1>Sua marca merece<br>mais do que<br><em>estar online.</em></h1>
-    <p>Transformamos ideias em experiências digitais que unem identidade, estética e funcionalidade.</p>
+    <p>Criamos sites, conteúdos e estratégias digitais que unem criatividade, tecnologia e identidade para fortalecer a presença da sua marca.</p>
     <div class="hero-actions">
-      <a href="#projetos" class="btn btn-blue">Explorar projetos ↗</a>
-      <a href="#sobre" class="btn btn-line">Conheça a KIVRA ↓</a>
-    </div>
-  </div>
-
-  <div class="hero-slide" aria-hidden="true">
-    <div class="eyebrow">Design with intention</div>
-    <h1>O digital também<br>pode ser uma<br><em>experiência.</em></h1>
-    <p>Criamos sites que comunicam com clareza, valorizam marcas e tornam cada interação mais significativa.</p>
-    <div class="hero-actions">
-      <a href="#servicos" class="btn btn-blue">Nossas soluções ↗</a>
-      <a href="#projetos" class="btn btn-line">Ver portfólio ↓</a>
+      <a href="#servicos" class="btn btn-blue">Conhecer soluções ↗</a>
+      <a href="#projetos" class="btn btn-line">Explorar projetos ↓</a>
     </div>
   </div>
 
   <div class="hero-slide" aria-hidden="true">
     <div class="eyebrow">Creative digital experiences</div>
-    <h1>Presença digital.<br>Identidade forte.<br><em>Novas possibilidades.</em></h1>
-    <p>Uma abordagem criativa para negócios que desejam construir uma presença digital profissional e autêntica.</p>
+    <h1>Não basta aparecer.<br>É preciso<br><em>ser lembrado.</em></h1>
+    <p>Construímos experiências digitais e conteúdos que comunicam a personalidade de cada negócio e criam conexões com seu público.</p>
+    <div class="hero-actions">
+      <a href="#sobre" class="btn btn-blue">Conheça a KIVRA ↗</a>
+      <a href="#servicos" class="btn btn-line">Nossos serviços ↓</a>
+    </div>
+  </div>
+
+  <div class="hero-slide" aria-hidden="true">
+    <div class="eyebrow">Design · Content · Strategy</div>
+    <h1>Ideias criativas.<br>Estratégia digital.<br><em>Marcas com identidade.</em></h1>
+    <p>Do desenvolvimento do seu site à comunicação nas redes sociais, pensamos em cada detalhe da sua presença digital.</p>
     <div class="hero-actions">
       <a href="#contato" class="btn btn-blue">Iniciar meu projeto ↗</a>
       <a href="#processo" class="btn btn-line">Como trabalhamos ↓</a>
@@ -1083,7 +1122,7 @@ footer{padding:65px 0 30px;background:var(--dark)}
 
 <div class="hero-bottom">
   <div class="container">
-    <span>Design · Estratégia · Desenvolvimento</span>
+    <span>Websites · Social Media · Marketing Digital</span>
     <span>Explore ↓</span>
   </div>
 </div>
@@ -1094,15 +1133,15 @@ footer{padding:65px 0 30px;background:var(--dark)}
   <div class="marquee-track">
     <div class="marquee-group">
       <span>WEB DESIGN</span><b>✳</b>
-      <span>CREATIVE DEVELOPMENT</span><b>✳</b>
-      <span>DIGITAL EXPERIENCES</span><b>✳</b>
-      <span>VISUAL IDENTITY</span><b>✳</b>
+      <span>SOCIAL MEDIA</span><b>✳</b>
+      <span>CONTENT CREATION</span><b>✳</b>
+      <span>DIGITAL STRATEGY</span><b>✳</b>
     </div>
     <div class="marquee-group" aria-hidden="true">
       <span>WEB DESIGN</span><b>✳</b>
-      <span>CREATIVE DEVELOPMENT</span><b>✳</b>
-      <span>DIGITAL EXPERIENCES</span><b>✳</b>
-      <span>VISUAL IDENTITY</span><b>✳</b>
+      <span>SOCIAL MEDIA</span><b>✳</b>
+      <span>CONTENT CREATION</span><b>✳</b>
+      <span>DIGITAL STRATEGY</span><b>✳</b>
     </div>
   </div>
 </div>
@@ -1111,17 +1150,17 @@ footer{padding:65px 0 30px;background:var(--dark)}
 <section class="section about" id="sobre">
 <div class="container about-grid">
   <div class="reveal">
-    <div class="eyebrow">01 / O estúdio</div>
+    <div class="eyebrow">01 / A agência</div>
     <h2 class="section-title">
-      Design com<br><em>intenção.</em><br>
+      Criatividade com<br><em>intenção.</em><br>
       Presença com<br>personalidade.
     </h2>
   </div>
   <div class="about-copy reveal">
-    <p>A KIVRA é um estúdio digital independente especializado no desenvolvimento de sites que unem estética, funcionalidade e identidade.</p>
-    <p>Uma presença digital bem construída precisa ir além de um layout bonito. Ela deve comunicar o que torna cada marca única, transmitir confiança e facilitar conexões.</p>
-    <p>Nosso propósito é transformar ideias em experiências digitais pensadas para pessoas e negócios reais.</p>
-    <div class="about-line">KIVRA Estúdio Digital — Digital by design.</div>
+    <p>A KIVRA é uma agência digital independente que une desenvolvimento web, criação de conteúdo e estratégias de comunicação para marcas que desejam construir uma presença digital autêntica.</p>
+    <p>Acreditamos que estar no digital vai além de ter um site bonito ou publicar nas redes sociais. É preciso comunicar com clareza, construir identidade e criar conexões com as pessoas certas.</p>
+    <p>Nosso propósito é transformar ideias em experiências digitais que valorizam a essência de cada negócio.</p>
+    <div class="about-line">KIVRA Agência Digital — Creative by design.</div>
   </div>
 </div>
 </section>
@@ -1132,28 +1171,34 @@ footer{padding:65px 0 30px;background:var(--dark)}
   <div class="services-header reveal">
     <div>
       <div class="eyebrow">02 / Especialidades</div>
-      <h2 class="section-title">Soluções digitais<br><em>sob medida.</em></h2>
+      <h2 class="section-title">Sua marca em<br><em>todas as telas.</em></h2>
     </div>
-    <p class="muted">Uma abordagem focada em criação e desenvolvimento web, com atenção à identidade e aos objetivos de cada negócio.</p>
+    <p class="muted">Soluções que conectam design, tecnologia e comunicação para construir uma presença digital consistente.</p>
   </div>
 
   <div class="service-list">
     <div class="service reveal">
       <span class="service-num">01</span>
-      <h3>Sites institucionais</h3>
-      <p>Sites profissionais para apresentar sua marca, serviços e diferenciais com clareza, organização e elegância.</p>
+      <h3>Desenvolvimento de sites</h3>
+      <p>Sites institucionais, landing pages e redesign, com foco em identidade visual, navegação e experiência do usuário.</p>
       <span class="service-arrow">↗</span>
     </div>
     <div class="service reveal">
       <span class="service-num">02</span>
-      <h3>Landing pages</h3>
-      <p>Páginas direcionadas a campanhas, apresentações de ofertas e geração de contatos.</p>
+      <h3>Gestão de redes sociais</h3>
+      <p>Planejamento de publicações, organização editorial e comunicação alinhada ao posicionamento de cada marca.</p>
       <span class="service-arrow">↗</span>
     </div>
     <div class="service reveal">
       <span class="service-num">03</span>
-      <h3>Redesign de sites</h3>
-      <p>Reformulação visual e estrutural para atualizar a experiência e melhorar a apresentação digital de uma marca.</p>
+      <h3>Criação de conteúdo</h3>
+      <p>Posts, carrosséis, roteiros e vídeos criativos para apresentar produtos, serviços e histórias de forma envolvente.</p>
+      <span class="service-arrow">↗</span>
+    </div>
+    <div class="service reveal">
+      <span class="service-num">04</span>
+      <h3>Marketing digital</h3>
+      <p>Estratégias de comunicação, posicionamento e conteúdo para fortalecer a presença digital e o relacionamento com o público.</p>
       <span class="service-arrow">↗</span>
     </div>
   </div>
@@ -1163,7 +1208,7 @@ footer{padding:65px 0 30px;background:var(--dark)}
 <!-- FRASE DE DESTAQUE -->
 <section class="statement">
 <div class="container reveal">
-  <p>Não criamos apenas páginas.<br>Criamos a forma como sua marca <em>é percebida no digital.</em></p>
+  <p>Não se trata apenas de estar presente.<br>Trata-se de construir uma marca que <em>as pessoas reconheçam e lembrem.</em></p>
 </div>
 </section>
 
@@ -1174,7 +1219,7 @@ footer{padding:65px 0 30px;background:var(--dark)}
 <div class="portfolio-header reveal">
   <div>
     <div class="eyebrow">03 / Portfólio</div>
-    <h2 class="section-title">Projetos que traduzem<br><em>identidade em presença.</em></h2>
+    <h2 class="section-title">Projetos que traduzem<br><em>ideias em presença.</em></h2>
   </div>
   <div class="portfolio-nav">
     <button id="projectPrev" aria-label="Projeto anterior">←</button>
@@ -1228,7 +1273,7 @@ footer{padding:65px 0 30px;background:var(--dark)}
   <div class="project-info">
     <div>
       <h3>Dra. Ildélia</h3>
-      <p>Ortopedia e Saúde Musculoesquelética · Website institucional</p>
+      <p>Saúde · Website institucional</p>
     </div>
     <a href="https://fusco-performance-nu.vercel.app"
        target="_blank" rel="noopener noreferrer">
@@ -1247,15 +1292,15 @@ footer{padding:65px 0 30px;background:var(--dark)}
           <use href="#kivra-mark"></use>
         </svg>
         <strong>KIVRA</strong>
-        <small>ESTÚDIO DIGITAL</small>
-        <p>Design with intention.<br>Built with purpose.</p>
+        <small>AGÊNCIA DIGITAL</small>
+        <p>Websites · Social Media · Marketing Digital</p>
       </div>
     </div>
   </div>
   <div class="project-info">
     <div>
-      <h3>KIVRA Estúdio Digital</h3>
-      <p>Identidade digital · Website autoral</p>
+      <h3>KIVRA Agência Digital</h3>
+      <p>Branding digital · Website autoral</p>
     </div>
     <a href="#inicio">EXPLORAR PROJETO ↗</a>
   </div>
@@ -1289,22 +1334,22 @@ footer{padding:65px 0 30px;background:var(--dark)}
     <div class="process-card reveal">
       <span>01 / DESCOBERTA</span>
       <h3>Entender</h3>
-      <p>Conhecemos seu negócio, seu público e os objetivos da sua presença digital.</p>
+      <p>Conhecemos seu negócio, seu público e os objetivos da sua comunicação.</p>
     </div>
     <div class="process-card reveal">
-      <span>02 / DIREÇÃO</span>
+      <span>02 / ESTRATÉGIA</span>
       <h3>Planejar</h3>
-      <p>Organizamos o conteúdo, a estrutura e a direção visual do projeto.</p>
+      <p>Definimos a direção criativa, o conteúdo e as soluções mais adequadas ao projeto.</p>
     </div>
     <div class="process-card reveal">
       <span>03 / CRIAÇÃO</span>
-      <h3>Desenvolver</h3>
-      <p>Construímos uma experiência responsiva, funcional e alinhada à sua identidade.</p>
+      <h3>Criar</h3>
+      <p>Desenvolvemos sites, conteúdos e materiais digitais alinhados à identidade da marca.</p>
     </div>
     <div class="process-card reveal">
       <span>04 / ENTREGA</span>
-      <h3>Publicar</h3>
-      <p>Revisamos, testamos e preparamos o site para entrar no ar.</p>
+      <h3>Evoluir</h3>
+      <p>Revisamos e entregamos o projeto, acompanhando os próximos passos conforme o serviço contratado.</p>
     </div>
   </div>
 </div>
@@ -1314,8 +1359,8 @@ footer{padding:65px 0 30px;background:var(--dark)}
 <section class="section contact" id="contato">
 <div class="container reveal">
   <div class="eyebrow">05 / Vamos conversar?</div>
-  <h2 class="section-title">Sua próxima presença digital começa com uma <em>boa ideia.</em></h2>
-  <p>Tem um projeto em mente? Vamos conversar sobre como transformar sua ideia em uma experiência digital com identidade e propósito.</p>
+  <h2 class="section-title">Sua marca tem uma história.<br><em>Vamos fazer ela aparecer.</em></h2>
+  <p>Precisa de um site, conteúdo para redes sociais ou uma estratégia de comunicação? Conte sua ideia e vamos encontrar a solução mais adequada para sua marca.</p>
   <a class="btn btn-blue"
      href="https://wa.me/5518930852612?text=Ol%C3%A1%21%20Conheci%20a%20KIVRA%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
      target="_blank" rel="noopener noreferrer">
@@ -1331,21 +1376,21 @@ footer{padding:65px 0 30px;background:var(--dark)}
 <div class="container">
   <div class="footer-main">
     <div class="footer-brand">
-      <a class="brand" href="#inicio" aria-label="KIVRA Estúdio Digital, início">
+      <a class="brand" href="#inicio" aria-label="KIVRA Agência Digital, início">
         <svg class="brand-symbol brand-mark" viewBox="0 0 120 120" aria-hidden="true">
           <use href="#kivra-mark"></use>
         </svg>
         <span class="brand-name">
           <strong>KIVRA</strong>
-          <small>ESTÚDIO DIGITAL</small>
+          <small>AGÊNCIA DIGITAL</small>
         </span>
       </a>
-      <p>Estúdio Digital.<br>Design e desenvolvimento web para marcas com identidade.</p>
+      <p>Sites, redes sociais e marketing digital para marcas com identidade.</p>
     </div>
     <div class="footer-links">
       <div>
         <strong>Explore</strong>
-        <a href="#sobre">O estúdio</a>
+        <a href="#sobre">A agência</a>
         <a href="#servicos">Serviços</a>
         <a href="#projetos">Projetos</a>
         <a href="#processo">Processo</a>
@@ -1359,8 +1404,8 @@ footer{padding:65px 0 30px;background:var(--dark)}
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© <span id="year"></span> KIVRA Estúdio Digital. Todos os direitos reservados.</span>
-    <span>Design with intention. Built with purpose.</span>
+    <span>© <span id="year"></span> KIVRA Agência Digital. Todos os direitos reservados.</span>
+    <span>Creative by design. Digital by nature.</span>
   </div>
 </div>
 </footer>
@@ -1397,7 +1442,7 @@ document.addEventListener("keydown",e=>{
 document.getElementById("year").textContent=
   new Date().getFullYear();
 
-/* PREFERÊNCIA DE MOVIMENTO */
+/* MOVIMENTO */
 const reducedMotion=window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 );

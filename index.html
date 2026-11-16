@@ -82,7 +82,6 @@ a:focus-visible,button:focus-visible{
 .btn-line{border-color:rgba(190,216,246,.4)}
 .btn-line:hover{background:var(--cream);color:var(--deep)}
 
-/* Identidade KIVRA */
 .brand{display:inline-flex;align-items:center;gap:12px;min-width:0}
 .brand-mark{width:44px;height:44px;flex:none}
 .brand-word{display:flex;flex-direction:column;line-height:1}
@@ -104,7 +103,6 @@ a:focus-visible,button:focus-visible{
 .brand-mark .primary{fill:currentColor}
 .brand-mark .detail{fill:var(--accent)}
 
-/* Cabeçalho */
 header{
   position:fixed;
   z-index:100;
@@ -138,7 +136,6 @@ nav a:hover{color:var(--accent)}
   font-size:27px;
 }
 
-/* Abertura */
 .hero{
   min-height:100svh;
   position:relative;
@@ -271,7 +268,6 @@ nav a:hover{color:var(--accent)}
   text-transform:uppercase;
 }
 
-/* Faixa de especialidades */
 .marquee{
   overflow:hidden;
   border-top:1px solid var(--line);
@@ -296,7 +292,6 @@ nav a:hover{color:var(--accent)}
 }
 .marquee-group b{color:var(--accent);font-size:16px}
 
-/* Sobre */
 .about,.portfolio{background:var(--cream);color:#101827}
 .about-grid{
   display:grid;
@@ -324,7 +319,6 @@ nav a:hover{color:var(--accent)}
   color:#315a86;
 }
 
-/* Serviços */
 .services-header{
   display:flex;
   justify-content:space-between;
@@ -368,7 +362,6 @@ nav a:hover{color:var(--accent)}
 }
 .statement em{font-style:normal;color:#A5BED3}
 
-/* Portfólio */
 .portfolio{overflow:hidden}
 .portfolio .section-title{margin:20px 0}
 .portfolio-header{
@@ -631,7 +624,6 @@ nav a:hover{color:var(--accent)}
 .portfolio-dot.active{width:28px;border-radius:10px;background:var(--accent-strong)}
 .portfolio-note{margin-top:25px;font-size:12px;line-height:1.8;color:#63768c}
 
-/* Processo */
 .process-head{margin-bottom:60px}
 .process-head h2{margin-top:20px}
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
@@ -660,7 +652,6 @@ nav a:hover{color:var(--accent)}
 }
 .process-card p{font-size:13px;line-height:1.9;color:var(--muted)}
 
-/* Contato e rodapé */
 .contact{background:var(--paper);color:#101827;text-align:center}
 .contact h2{max-width:850px;margin:25px auto}
 .contact p{
@@ -701,7 +692,6 @@ footer{padding:65px 0 30px;background:var(--deep)}
   font-size:11px;
 }
 
-/* Animações */
 @keyframes glowMove{
   from{transform:translate(-25px,-20px)}
   to{transform:translate(25px,35px)}
@@ -716,7 +706,6 @@ footer{padding:65px 0 30px;background:var(--deep)}
 }
 .reveal.visible{opacity:1;transform:none}
 
-/* Responsividade */
 @media(max-width:900px){
   .about-grid{gap:40px}
   .service{grid-template-columns:40px 1fr 30px}
@@ -814,7 +803,6 @@ footer{padding:65px 0 30px;background:var(--deep)}
 
 <body>
 
-<!-- Símbolo reutilizável: navegador + K geométrico + pixels -->
 <svg xmlns="http://www.w3.org/2000/svg"
      style="position:absolute;width:0;height:0;overflow:hidden"
      aria-hidden="true">
@@ -825,4 +813,596 @@ footer{padding:65px 0 30px;background:var(--deep)}
     <circle cx="49" cy="15" r="2.2" fill="#0B1B3D"/>
     <rect x="26" y="34" width="28" height="28" rx="5" fill="currentColor"/>
     <rect x="26" y="66" width="28" height="38" rx="5" fill="currentColor"/>
-    <path fill="currentColor" d="M57 60L82 
+    <path fill="currentColor" d="M57 60L82 34H109L83 62L112 104H84L69 80L57 93Z"/>
+    <path fill="#7FA3C2" d="M69 87L82 104H58Z"/>
+    <rect x="96" y="10" width="16" height="16" rx="4" fill="#7FA3C2"/>
+    <rect x="86" y="27" width="9" height="9" rx="2" fill="#7FA3C2"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="container header-inner">
+    <a href="#inicio" class="brand" aria-label="KIVRA Sites &amp; Automações, início">
+      <svg class="brand-mark" aria-hidden="true">
+        <use href="#kivra-symbol"/>
+      </svg>
+      <span class="brand-word">
+        <strong>KIVRA</strong>
+        <small>SITES &amp; AUTOMAÇÕES</small>
+      </span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="nav">☰</button>
+
+    <nav id="nav" aria-label="Menu principal">
+      <a href="#sobre">A KIVRA</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#processo">Processo</a>
+      <a href="#contato" class="nav-cta">Iniciar um projeto ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="inicio">
+    <div class="tech-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="orbit"></div>
+
+    <div class="container hero-content">
+      <div class="hero-slider" aria-label="Apresentação KIVRA">
+
+        <div class="hero-slide active" aria-hidden="false">
+          <div class="eyebrow">KIVRA · Sites e automações</div>
+          <h1>Seu negócio cresceu.<br>Seu digital<br><em>acompanha?</em></h1>
+          <p>Sites profissionais para apresentar seu negócio com clareza. Automações sob medida para simplificar o caminho entre o primeiro contato e o atendimento.</p>
+          <div class="hero-actions">
+            <a href="#projetos" class="btn btn-blue">Explorar projetos ↗</a>
+            <a href="#sobre" class="btn btn-line">Conheça a KIVRA ↓</a>
+          </div>
+        </div>
+
+        <div class="hero-slide" aria-hidden="true">
+          <div class="eyebrow">Sites com identidade</div>
+          <h1>Seu próximo cliente<br>precisa entender<br><em>o seu valor.</em></h1>
+          <p>Organizamos seus serviços, diferenciais e canais de contato em um site pensado para funcionar no celular e no computador.</p>
+          <div class="hero-actions">
+            <a href="#servicos" class="btn btn-blue">Nossas soluções ↗</a>
+            <a href="#projetos" class="btn btn-line">Ver portfólio ↓</a>
+          </div>
+        </div>
+
+        <div class="hero-slide" aria-hidden="true">
+          <div class="eyebrow">Menos tarefas repetitivas</div>
+          <h1>Mais tempo para<br>o que precisa<br><em>de você.</em></h1>
+          <p>Mapeamos tarefas que podem ser automatizadas e avaliamos as integrações necessárias. A inteligência artificial entra quando ajuda a resolver o problema.</p>
+          <div class="hero-actions">
+            <a href="#contato" class="btn btn-blue">Iniciar meu projeto ↗</a>
+            <a href="#processo" class="btn btn-line">Como trabalhamos ↓</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-controls">
+        <span class="slide-counter" id="heroCounter">01 / 03</span>
+        <div class="progress-track">
+          <div class="progress-fill" id="heroProgress"></div>
+        </div>
+        <div class="hero-arrows">
+          <button class="arrow-btn" id="heroPrev" aria-label="Slide anterior">←</button>
+          <button class="arrow-btn" id="heroNext" aria-label="Próximo slide">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="container">
+        <span>Sites · Automações · Integrações</span>
+        <span>Explore ↓</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-label="Especialidades KIVRA">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span>WEB DESIGN</span><b>✳</b>
+        <span>AUTOMAÇÕES</span><b>✳</b>
+        <span>INTEGRAÇÕES</span><b>✳</b>
+        <span>IA APLICADA</span><b>✳</b>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span>WEB DESIGN</span><b>✳</b>
+        <span>AUTOMAÇÕES</span><b>✳</b>
+        <span>INTEGRAÇÕES</span><b>✳</b>
+        <span>IA APLICADA</span><b>✳</b>
+      </div>
+    </div>
+  </div>
+
+  <section class="section about" id="sobre">
+    <div class="container about-grid">
+      <div class="reveal">
+        <div class="eyebrow">01 / A KIVRA</div>
+        <h2 class="section-title">
+          Seu negócio<br>
+          bem apresentado.<br>
+          Sua rotina<br>
+          <em>mais simples.</em>
+        </h2>
+      </div>
+      <div class="about-copy reveal">
+        <p>A KIVRA desenvolve sites profissionais e projetos de automação sob medida para negócios que querem melhorar sua presença digital e organizar processos.</p>
+        <p>Cada site parte de uma pergunta: o que seu cliente precisa entender para dar o próximo passo? A resposta orienta o conteúdo, o design e a navegação.</p>
+        <p>Nas automações, começamos com uma tarefa concreta. Avaliamos a viabilidade, definimos os limites e testamos o fluxo antes da entrega. A inteligência artificial é aplicada conforme a necessidade do projeto.</p>
+        <div class="about-line">
+          KIVRA — Sites com identidade. Automações com propósito.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="services-header reveal">
+        <div>
+          <div class="eyebrow">02 / Especialidades</div>
+          <h2 class="section-title">Soluções digitais<br><em>sob medida.</em></h2>
+        </div>
+        <p class="muted">Sites como ponto de partida. Automações e integrações conforme a necessidade, a viabilidade técnica e as ferramentas do seu negócio.</p>
+      </div>
+
+      <div class="service-list">
+        <div class="service reveal">
+          <span class="service-num">01</span>
+          <h3>Sites institucionais</h3>
+          <p>Sites profissionais para apresentar sua marca, serviços e diferenciais com clareza, organização e elegância.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+
+        <div class="service reveal">
+          <span class="service-num">02</span>
+          <h3>Landing pages</h3>
+          <p>Páginas direcionadas a campanhas, apresentações de ofertas e geração de contatos.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+
+        <div class="service reveal">
+          <span class="service-num">03</span>
+          <h3>Automações sob medida</h3>
+          <p>Conexão entre formulários, contatos e notificações para reduzir tarefas manuais. Projetos sob consulta, com integrações e uso de IA avaliados conforme a necessidade.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="container reveal">
+      <p>
+        Seu site apresenta.<br>
+        Seu processo conecta.<br>
+        <em>Seu negócio segue em frente.</em>
+      </p>
+    </div>
+  </section>
+
+  <section class="section portfolio" id="projetos">
+    <div class="container">
+
+      <div class="portfolio-header reveal">
+        <div>
+          <div class="eyebrow">03 / Portfólio</div>
+          <h2 class="section-title">
+            Projetos que traduzem<br>
+            <em>identidade em presença.</em>
+          </h2>
+        </div>
+        <div class="portfolio-nav">
+          <button id="projectPrev" aria-label="Projeto anterior">←</button>
+          <button id="projectNext" aria-label="Próximo projeto">→</button>
+        </div>
+      </div>
+
+      <div class="portfolio-window" id="portfolioWindow" aria-label="Carrossel de projetos">
+        <div class="portfolio-track" id="portfolioTrack">
+
+          <article class="project">
+            <div class="project-visual project-medical">
+              <div class="browser">
+                <div class="browser-top"><i></i><i></i><i></i></div>
+                <div class="medical-preview">
+                  <div class="medical-nav">
+                    <div class="medical-brand">
+                      ϟ DRA. ILDÉLIA
+                      <span>ORTOPEDIA E SAÚDE MUSCULOESQUELÉTICA</span>
+                    </div>
+                    <div class="medical-menu">
+                      <span>Serviços</span>
+                      <span>Dra. Ildélia</span>
+                      <span>Scan termográfico</span>
+                    </div>
+                  </div>
+
+                  <div class="medical-main">
+                    <div class="medical-copy">
+                      <small>Medicina integrada · Araçatuba SP</small>
+                      <h4>Saúde em movimento.<br>Cuidado com propósito.</h4>
+                      <p>Cuidado especializado em ortopedia e medicina esportiva.</p>
+                      <span class="medical-mini-btn">Agendar atendimento ↗</span>
+                    </div>
+
+                    <div class="thermal-panel">
+                      <div class="thermal-label">SCAN TÉRMICO · VISTA FRONTAL</div>
+                      <div class="thermal-body"></div>
+                      <div class="scan-line"></div>
+                      <div class="thermal-reading">
+                        <strong>36.1°C</strong>VISUALIZAÇÃO
+                      </div>
+                      <div class="thermal-disclaimer">
+                        Ilustração visual, não representa medição clínica.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div>
+                <h3>Dra. Ildélia</h3>
+                <p>Ortopedia e Saúde Musculoesquelética · Website institucional</p>
+              </div>
+              <a href="https://fusco-performance-nu.vercel.app"
+                 target="_blank" rel="noopener noreferrer">VISITAR SITE ↗</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual project-kivra">
+              <div class="browser">
+                <div class="browser-top"><i></i><i></i><i></i></div>
+                <div class="kivra-preview">
+                  <svg class="brand-mark" aria-hidden="true">
+                    <use href="#kivra-symbol"/>
+                  </svg>
+                  <strong>KIVRA</strong>
+                  <small>SITES &amp; AUTOMAÇÕES</small>
+                  <p>Sites com identidade.<br>Automações com propósito.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div>
+                <h3>KIVRA Sites &amp; Automações</h3>
+                <p>Identidade digital · Website autoral</p>
+              </div>
+              <a href="#inicio">EXPLORAR PROJETO ↗</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="portfolio-dots">
+        <button class="portfolio-dot active" data-slide="0"
+                aria-label="Ver projeto Dra. Ildélia" aria-current="true"></button>
+        <button class="portfolio-dot" data-slide="1"
+                aria-label="Ver projeto KIVRA" aria-current="false"></button>
+      </div>
+
+      <p class="portfolio-note">
+        Portfólio em construção. As prévias são representações visuais dos projetos;
+        utilize “Visitar site” para conhecer a versão publicada.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="processo">
+    <div class="container">
+      <div class="process-head reveal">
+        <div class="eyebrow">04 / Nosso processo</div>
+        <h2 class="section-title">Da primeira ideia<br>à <em>experiência final.</em></h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card reveal">
+          <span>01 / DESCOBERTA</span>
+          <h3>Entender</h3>
+          <p>Entendemos seu negócio, seu público e a tarefa que o projeto precisa resolver.</p>
+        </div>
+
+        <div class="process-card reveal">
+          <span>02 / DIREÇÃO</span>
+          <h3>Planejar</h3>
+          <p>Definimos entregas, prazos, revisões e ferramentas. Custos de serviços externos são combinados antes do início.</p>
+        </div>
+
+        <div class="process-card reveal">
+          <span>03 / CRIAÇÃO</span>
+          <h3>Desenvolver</h3>
+          <p>Criamos o site ou configuramos o fluxo aprovado, com testes e ajustes ao longo do desenvolvimento.</p>
+        </div>
+
+        <div class="process-card reveal">
+          <span>04 / VALIDAÇÃO</span>
+          <h3>Entregar</h3>
+          <p>Validamos os caminhos principais e orientamos o uso. Manutenção e suporte são definidos na proposta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contato">
+    <div class="container reveal">
+      <div class="eyebrow">05 / Vamos conversar?</div>
+      <h2 class="section-title">
+        Qual próximo passo<br>
+        o seu negócio<br>
+        <em>precisa dar?</em>
+      </h2>
+      <p>Um site novo ou uma tarefa que ocupa tempo demais? Conte o que você precisa. Vamos avaliar o escopo e o caminho possível para o seu projeto.</p>
+
+      <a class="btn btn-blue"
+         href="https://wa.me/5518930852612?text=Ol%C3%A1%21%20Conheci%20a%20KIVRA%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+         target="_blank" rel="noopener noreferrer">
+        INICIAR UMA CONVERSA ↗
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#inicio" class="brand" aria-label="KIVRA Sites &amp; Automações, início">
+          <svg class="brand-mark" aria-hidden="true">
+            <use href="#kivra-symbol"/>
+          </svg>
+          <span class="brand-word">
+            <strong>KIVRA</strong>
+            <small>SITES &amp; AUTOMAÇÕES</small>
+          </span>
+        </a>
+        <p>Sites profissionais e automações sob medida.<br>Tecnologia aplicada ao que seu negócio precisa.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <strong>Explore</strong>
+          <a href="#sobre">A KIVRA</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#processo">Processo</a>
+        </div>
+        <div>
+          <strong>Contato</strong>
+          <a href="https://wa.me/5518930852612"
+             target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+          <a href="#contato">Iniciar projeto</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> KIVRA Sites &amp; Automações. Todos os direitos reservados.</span>
+      <span>Sites com identidade. Automações com propósito.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.getElementById('nav');
+
+function closeMenu(){
+  nav.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  menuBtn.setAttribute('aria-expanded','false');
+  menuBtn.setAttribute('aria-label','Abrir menu');
+  menuBtn.textContent = '☰';
+}
+
+menuBtn.addEventListener('click',()=>{
+  const open = nav.classList.toggle('open');
+  document.body.classList.toggle('menu-open',open);
+  menuBtn.setAttribute('aria-expanded',String(open));
+  menuBtn.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+  menuBtn.textContent = open?'✕':'☰';
+});
+
+nav.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',closeMenu);
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeMenu();
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const heroSlides = [...document.querySelectorAll('.hero-slide')];
+const heroCounter = document.getElementById('heroCounter');
+const heroProgress = document.getElementById('heroProgress');
+const heroSection = document.querySelector('.hero');
+
+let heroIndex = 0;
+let heroTimer = null;
+let heroPausedByInteraction = false;
+
+function showHero(index){
+  heroIndex = (index + heroSlides.length) % heroSlides.length;
+
+  heroSlides.forEach((slide,i)=>{
+    const active = i===heroIndex;
+    slide.classList.toggle('active',active);
+    slide.setAttribute('aria-hidden',String(!active));
+    slide.querySelectorAll('a').forEach(a=>{
+      a.tabIndex = active?0:-1;
+    });
+  });
+
+  heroCounter.textContent =
+    String(heroIndex+1).padStart(2,'0') +
+    ' / ' +
+    String(heroSlides.length).padStart(2,'0');
+
+  heroProgress.classList.remove('running');
+  void heroProgress.offsetWidth;
+}
+
+function stopHero(){
+  clearInterval(heroTimer);
+  heroTimer = null;
+  heroProgress.classList.remove('running');
+}
+
+function startHero(){
+  stopHero();
+
+  if(reducedMotion.matches || document.hidden || heroPausedByInteraction) return;
+
+  heroProgress.classList.add('running');
+  heroTimer = setInterval(()=>{
+    showHero(heroIndex+1);
+    heroProgress.classList.add('running');
+  },6000);
+}
+
+function changeHero(direction){
+  showHero(heroIndex+direction);
+  startHero();
+}
+
+document.getElementById('heroPrev').addEventListener('click',()=>{
+  changeHero(-1);
+});
+document.getElementById('heroNext').addEventListener('click',()=>{
+  changeHero(1);
+});
+
+heroSection.addEventListener('mouseenter',()=>{
+  heroPausedByInteraction = true;
+  stopHero();
+});
+heroSection.addEventListener('mouseleave',()=>{
+  heroPausedByInteraction = false;
+  startHero();
+});
+heroSection.addEventListener('focusin',()=>{
+  heroPausedByInteraction = true;
+  stopHero();
+});
+heroSection.addEventListener('focusout',e=>{
+  if(!heroSection.contains(e.relatedTarget)){
+    heroPausedByInteraction = false;
+    startHero();
+  }
+});
+
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden) stopHero();
+  else startHero();
+});
+
+reducedMotion.addEventListener('change',()=>{
+  showHero(heroIndex);
+  startHero();
+});
+
+showHero(0);
+startHero();
+
+const portfolioTrack = document.getElementById('portfolioTrack');
+const projects = [...portfolioTrack.querySelectorAll('.project')];
+const dots = [...document.querySelectorAll('.portfolio-dot')];
+const portfolioWindow = document.getElementById('portfolioWindow');
+
+let projectIndex = 0;
+let touchStartX = 0;
+
+function showProject(index){
+  projectIndex = (index + projects.length) % projects.length;
+  portfolioTrack.style.transform = `translateX(-${projectIndex*100}%)`;
+
+  projects.forEach((project,i)=>{
+    const active = i===projectIndex;
+    project.setAttribute('aria-hidden',String(!active));
+    project.querySelectorAll('a').forEach(a=>{
+      a.tabIndex = active?0:-1;
+    });
+  });
+
+  dots.forEach((dot,i)=>{
+    const active = i===projectIndex;
+    dot.classList.toggle('active',active);
+    dot.setAttribute('aria-current',String(active));
+  });
+}
+
+document.getElementById('projectPrev').addEventListener('click',()=>{
+  showProject(projectIndex-1);
+});
+document.getElementById('projectNext').addEventListener('click',()=>{
+  showProject(projectIndex+1);
+});
+
+dots.forEach(dot=>{
+  dot.addEventListener('click',()=>{
+    showProject(Number(dot.dataset.slide));
+  });
+});
+
+portfolioWindow.addEventListener('touchstart',e=>{
+  touchStartX = e.changedTouches[0].screenX;
+},{passive:true});
+
+portfolioWindow.addEventListener('touchend',e=>{
+  const difference = e.changedTouches[0].screenX-touchStartX;
+
+  if(Math.abs(difference)>55){
+    showProject(projectIndex+(difference<0?1:-1));
+  }
+},{passive:true});
+
+showProject(0);
+
+const revealElements = document.querySelectorAll('.reveal');
+
+if('IntersectionObserver' in window && !reducedMotion.matches){
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{
+    threshold:.08,
+    rootMargin:'0px 0px 30px 0px'
+  });
+
+  revealElements.forEach(el=>observer.observe(el));
+}else{
+  revealElements.forEach(el=>el.classList.add('visible'));
+}
+
+reducedMotion.addEventListener('change',()=>{
+  if(reducedMotion.matches){
+    revealElements.forEach(el=>el.classList.add('visible'));
+  }
+});
+</script>
+
+</body>
+</html>

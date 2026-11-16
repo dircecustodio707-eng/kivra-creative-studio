@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0B1B3D">
-<meta name="description" content="KIVRA Agência Digital. Desenvolvimento de sites, gestão de redes sociais, criação de conteúdo e marketing digital.">
-<title>KIVRA | Agência Digital</title>
+<meta name="description" content="KIVRA — sites profissionais, landing pages e automações sob medida. Presença digital com identidade e processos mais simples.">
+<title>KIVRA | Sites e Automações</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,52 +14,53 @@
 <style>
 :root{
   --bg:#0B1B3D;
-  --dark:#060C19;
+  --deep:#060C19;
   --panel:#142747;
   --accent:#7FA3C2;
-  --accent-soft:#A9C1D5;
-  --white:#F5F5F3;
+  --accent-strong:#648BAD;
+  --cream:#F5F5F3;
   --paper:#EDEFF2;
   --muted:#B1C0D0;
-  --ink:#101827;
-  --line:rgba(127,163,194,.20);
+  --line:rgba(127,163,194,.22);
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:85px}
 body{
+  font-family:'DM Sans',sans-serif;
   background:var(--bg);
-  color:var(--white);
-  font-family:"DM Sans",sans-serif;
+  color:var(--cream);
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
 body.menu-open{overflow:hidden}
-a{color:inherit;text-decoration:none}
+a{text-decoration:none;color:inherit}
 button{font:inherit;cursor:pointer}
-button:focus-visible,a:focus-visible{
-  outline:2px solid var(--accent-soft);
+a:focus-visible,button:focus-visible{
+  outline:2px solid var(--accent);
   outline-offset:4px;
 }
-::selection{background:var(--accent);color:var(--dark)}
+::selection{background:var(--accent);color:var(--deep)}
 .container{width:min(1160px,calc(100% - 40px));margin:auto}
-.section{padding:110px 0}
+.section{padding:112px 0}
 .eyebrow{
   font-size:10px;
   font-weight:700;
   letter-spacing:3px;
   text-transform:uppercase;
-  color:var(--accent-soft);
+  color:var(--accent);
 }
 .section-title{
-  font-family:"Manrope",sans-serif;
-  font-size:clamp(35px,5.5vw,68px);
+  font-family:Manrope,sans-serif;
+  font-size:clamp(35px,5.5vw,66px);
   line-height:1.15;
   font-weight:700;
-  letter-spacing:-2.5px;
+  letter-spacing:-2px;
 }
-.section-title em{
+.section-title em,.hero-slide h1 em{
   font-style:normal;
-  color:var(--accent-soft);
+  color:var(--accent);
+  font-weight:inherit;
 }
 .muted{color:var(--muted);line-height:1.9}
 .btn{
@@ -74,58 +74,46 @@ button:focus-visible,a:focus-visible{
   font-weight:700;
   letter-spacing:1.2px;
   text-transform:uppercase;
-  transition:transform .35s,background .35s,color .35s;
+  transition:transform .3s,background .3s,color .3s;
 }
 .btn:hover{transform:translateY(-3px)}
-.btn-blue{background:var(--accent);color:var(--dark)}
-.btn-blue:hover{background:var(--white);color:var(--dark)}
-.btn-line{border-color:rgba(169,193,213,.4)}
-.btn-line:hover{background:var(--white);color:var(--dark)}
+.btn-blue{background:var(--accent);color:var(--deep)}
+.btn-blue:hover{background:var(--cream)}
+.btn-line{border-color:rgba(190,216,246,.4)}
+.btn-line:hover{background:var(--cream);color:var(--deep)}
 
-/* MARCA */
-.brand{
-  display:inline-flex;
-  align-items:center;
-  gap:11px;
-}
-.brand-symbol{
-  width:44px;
-  height:44px;
-  flex-shrink:0;
-}
-.brand-name{
-  display:flex;
-  flex-direction:column;
-  gap:3px;
-}
-.brand-name strong{
-  font-family:"Manrope",sans-serif;
-  font-size:23px;
-  line-height:1;
-  letter-spacing:1.5px;
+/* Identidade KIVRA */
+.brand{display:inline-flex;align-items:center;gap:12px;min-width:0}
+.brand-mark{width:44px;height:44px;flex:none}
+.brand-word{display:flex;flex-direction:column;line-height:1}
+.brand-word strong{
+  font-family:Manrope,sans-serif;
+  font-size:22px;
+  letter-spacing:2.5px;
   font-weight:800;
 }
-.brand-name small{
+.brand-word small{
   font-size:8px;
-  letter-spacing:2.1px;
-  text-transform:uppercase;
-  font-weight:600;
+  letter-spacing:1.1px;
+  white-space:nowrap;
+  margin-top:6px;
+  color:var(--accent);
+  font-weight:700;
+  line-height:1.4;
 }
-.brand-mark{color:var(--white)}
-.brand-mark .mark-primary{fill:currentColor}
-.brand-mark .mark-accent{fill:var(--accent)}
-.brand-mark .mark-dots{fill:var(--bg)}
+.brand-mark .primary{fill:currentColor}
+.brand-mark .detail{fill:var(--accent)}
 
-/* CABEÇALHO */
+/* Cabeçalho */
 header{
   position:fixed;
   z-index:100;
-  top:0;left:0;
+  top:0;
+  left:0;
   width:100%;
   height:78px;
   background:rgba(6,12,25,.94);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
+  backdrop-filter:blur(18px);
   border-bottom:1px solid var(--line);
 }
 .header-inner{
@@ -135,36 +123,32 @@ header{
   justify-content:space-between;
 }
 nav{display:flex;align-items:center;gap:30px}
-nav a{
-  font-size:12px;
-  color:#D5E1F0;
-  transition:color .3s;
-}
-nav a:hover{color:var(--accent-soft)}
+nav a{font-size:12px;color:#d5e1f0;transition:color .3s}
+nav a:hover{color:var(--accent)}
 .nav-cta{
   padding:12px 17px;
-  border:1px solid rgba(127,163,194,.5);
-  color:var(--accent-soft);
+  border:1px solid var(--accent);
+  color:var(--accent);
 }
 .menu-btn{
   display:none;
   background:none;
   border:0;
-  color:var(--white);
+  color:white;
   font-size:27px;
 }
 
-/* APRESENTAÇÃO */
+/* Abertura */
 .hero{
   min-height:100svh;
   position:relative;
   display:flex;
   align-items:center;
   overflow:hidden;
-  padding:125px 0 110px;
+  padding:130px 0 110px;
   isolation:isolate;
   background:
-    radial-gradient(ellipse at 83% 28%,rgba(127,163,194,.10),transparent 53%),
+    radial-gradient(ellipse at 83% 28%,rgba(127,163,194,.11),transparent 55%),
     var(--bg);
 }
 .tech-grid{
@@ -179,17 +163,21 @@ nav a:hover{color:var(--accent-soft)}
 }
 .hero-glow{
   position:absolute;
-  width:650px;height:650px;
-  right:-260px;top:8%;
+  width:650px;
+  height:650px;
+  right:-260px;
+  top:8%;
   z-index:-2;
-  background:radial-gradient(circle,rgba(127,163,194,.12),transparent 67%);
+  background:radial-gradient(circle,rgba(127,163,194,.10),transparent 67%);
   animation:glowMove 13s ease-in-out infinite alternate;
   pointer-events:none;
 }
 .orbit{
   position:absolute;
-  right:-250px;top:12%;
-  width:650px;height:650px;
+  right:-250px;
+  top:12%;
+  width:650px;
+  height:650px;
   border:1px solid rgba(127,163,194,.12);
   border-radius:50%;
   z-index:-1;
@@ -198,57 +186,48 @@ nav a:hover{color:var(--accent-soft)}
 .orbit:before,.orbit:after{
   content:"";
   position:absolute;
-  border:1px solid rgba(127,163,194,.09);
+  border:1px solid rgba(127,163,194,.10);
   border-radius:50%;
   inset:80px;
 }
 .orbit:after{inset:170px}
-.hero-content{width:100%;position:relative;z-index:2}
+.hero-content{position:relative;z-index:2}
 .hero-slider{
   display:grid;
-  grid-template-areas:"slide";
+  grid-template-areas:'slide';
   align-items:center;
-  min-height:440px;
+  min-height:430px;
 }
 .hero-slide{
   grid-area:slide;
   opacity:0;
   visibility:hidden;
   transform:translateY(22px);
-  transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1),visibility .8s;
+  transition:opacity .8s,transform .8s,visibility .8s;
   pointer-events:none;
 }
 .hero-slide.active{
   opacity:1;
   visibility:visible;
-  transform:translateY(0);
+  transform:none;
   pointer-events:auto;
 }
 .hero-slide h1{
-  font-family:"Manrope",sans-serif;
-  font-weight:700;
-  font-size:clamp(46px,7.3vw,94px);
-  line-height:1.12;
+  font-family:Manrope,sans-serif;
+  font-weight:800;
+  font-size:clamp(48px,7.5vw,95px);
+  line-height:1.1;
   letter-spacing:-4px;
   margin:28px 0;
-  max-width:1080px;
-}
-.hero-slide h1 em{
-  color:var(--accent-soft);
-  font-style:normal;
+  max-width:980px;
 }
 .hero-slide p{
-  max-width:570px;
+  max-width:540px;
   font-size:16px;
   line-height:1.9;
-  color:var(--muted);
+  color:#b7c8de;
 }
-.hero-actions{
-  display:flex;
-  gap:13px;
-  flex-wrap:wrap;
-  margin-top:36px;
-}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:36px}
 .hero-controls{
   display:flex;
   align-items:center;
@@ -259,7 +238,7 @@ nav a:hover{color:var(--accent-soft)}
 .slide-counter{
   font-size:12px;
   letter-spacing:2px;
-  color:var(--accent-soft);
+  color:var(--accent);
   white-space:nowrap;
 }
 .progress-track{
@@ -272,34 +251,27 @@ nav a:hover{color:var(--accent-soft)}
 .progress-fill.running{animation:slideProgress 6s linear forwards}
 .hero-arrows{display:flex;gap:9px}
 .arrow-btn{
-  width:39px;height:39px;
+  width:39px;
+  height:39px;
   border:1px solid rgba(255,255,255,.25);
   background:transparent;
-  color:var(--white);
+  color:white;
   font-size:19px;
   transition:.3s;
 }
-.arrow-btn:hover{
-  background:var(--accent);
-  color:var(--dark);
-  border-color:var(--accent);
-}
-.hero-bottom{
-  position:absolute;
-  bottom:30px;left:0;
-  width:100%;
-}
+.arrow-btn:hover{background:var(--accent);color:var(--deep)}
+.hero-bottom{position:absolute;bottom:30px;left:0;width:100%}
 .hero-bottom .container{
   display:flex;
   justify-content:space-between;
   gap:15px;
-  color:#9BAFC9;
+  color:#9bafc9;
   font-size:10px;
   letter-spacing:2px;
   text-transform:uppercase;
 }
 
-/* FAIXA ANIMADA */
+/* Faixa de especialidades */
 .marquee{
   overflow:hidden;
   border-top:1px solid var(--line);
@@ -320,44 +292,39 @@ nav a:hover{color:var(--accent-soft)}
   font-size:11px;
   font-weight:600;
   letter-spacing:3px;
-  color:#C0D0E4;
+  color:#c0d0e4;
 }
-.marquee-group b{
-  color:var(--accent-soft);
-  font-size:16px;
-}
+.marquee-group b{color:var(--accent);font-size:16px}
 
-/* SOBRE */
-.about{
-  background:var(--white);
-  color:var(--ink);
-}
+/* Sobre */
+.about,.portfolio{background:var(--cream);color:#101827}
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:90px;
   align-items:center;
 }
-.about .eyebrow{color:#476C8F}
+.about-grid>*{min-width:0}
+.about .eyebrow,.portfolio .eyebrow,.contact .eyebrow{color:#476C8F}
 .about .section-title{margin-top:24px}
-.about .section-title em{color:#476C8F}
+.about .section-title em,.portfolio .section-title em,.contact h2 em{color:#476C8F}
 .about-copy p{
   font-size:15px;
   line-height:2;
-  color:#52647A;
+  color:#52647a;
   margin-bottom:20px;
 }
 .about-line{
   margin-top:35px;
   padding-top:20px;
-  border-top:1px solid #C7D5E5;
+  border-top:1px solid #c7d5e5;
   font-size:11px;
   letter-spacing:2px;
   text-transform:uppercase;
-  color:#476C8F;
+  color:#315a86;
 }
 
-/* SERVIÇOS */
+/* Serviços */
 .services-header{
   display:flex;
   justify-content:space-between;
@@ -366,75 +333,44 @@ nav a:hover{color:var(--accent-soft)}
   margin-bottom:55px;
 }
 .services-header h2{margin-top:20px}
-.services-header p{
-  max-width:390px;
-  font-size:14px;
-}
+.services-header p{max-width:370px;font-size:14px}
 .service-list{border-top:1px solid var(--line)}
 .service{
   display:grid;
   grid-template-columns:55px 1fr 1fr 30px;
   gap:20px;
   align-items:center;
-  padding:37px 0;
+  padding:40px 0;
   border-bottom:1px solid var(--line);
   transition:padding .35s;
 }
 .service:hover{padding-left:10px}
-.service-num{
-  color:var(--accent-soft);
-  font-size:12px;
-}
+.service-num,.service-arrow{color:var(--accent)}
+.service-num{font-size:12px}
 .service h3{
-  font-family:"Manrope",sans-serif;
-  font-weight:600;
-  font-size:clamp(24px,3vw,36px);
+  font-family:Manrope,sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,3vw,36px);
   letter-spacing:-1px;
 }
-.service p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.9;
-}
-.service-arrow{
-  font-size:23px;
-  color:var(--accent-soft);
-  transition:transform .35s;
-}
-.service:hover .service-arrow{
-  transform:translate(4px,-4px);
-}
-
-/* FRASE DE DESTAQUE */
-.statement{
-  background:var(--panel);
-  color:var(--white);
-  text-align:center;
-  padding:95px 0;
-}
+.service p{color:var(--muted);font-size:13px;line-height:1.9}
+.service-arrow{font-size:23px;transition:transform .35s}
+.service:hover .service-arrow{transform:translate(4px,-4px)}
+.statement{background:#142747;text-align:center;padding:95px 0}
 .statement p{
-  font-family:"Manrope",sans-serif;
-  font-size:clamp(29px,4.7vw,59px);
-  font-weight:600;
-  letter-spacing:-2px;
+  font-family:Manrope,sans-serif;
+  font-size:clamp(29px,4.5vw,55px);
+  font-weight:700;
+  letter-spacing:-1.5px;
   line-height:1.3;
   max-width:950px;
   margin:auto;
 }
-.statement em{
-  color:var(--accent-soft);
-  font-style:normal;
-}
+.statement em{font-style:normal;color:#A5BED3}
 
-/* PORTFÓLIO */
-.portfolio{
-  background:var(--white);
-  color:var(--ink);
-  overflow:hidden;
-}
-.portfolio .eyebrow{color:#476C8F}
+/* Portfólio */
+.portfolio{overflow:hidden}
 .portfolio .section-title{margin:20px 0}
-.portfolio .section-title em{color:#476C8F}
 .portfolio-header{
   display:flex;
   justify-content:space-between;
@@ -444,21 +380,16 @@ nav a:hover{color:var(--accent-soft)}
 }
 .portfolio-nav{display:flex;gap:10px}
 .portfolio-nav button{
-  width:45px;height:45px;
-  border:1px solid #B7C9DD;
+  width:45px;
+  height:45px;
+  border:1px solid #b7c9dd;
   background:transparent;
-  color:var(--ink);
+  color:#10233d;
   font-size:20px;
   transition:.3s;
 }
-.portfolio-nav button:hover{
-  background:var(--bg);
-  color:white;
-}
-.portfolio-window{
-  overflow:hidden;
-  touch-action:pan-y;
-}
+.portfolio-nav button:hover{background:var(--bg);color:white}
+.portfolio-window{overflow:hidden;touch-action:pan-y}
 .portfolio-track{
   display:flex;
   transition:transform .75s cubic-bezier(.22,1,.36,1);
@@ -475,65 +406,48 @@ nav a:hover{color:var(--accent-soft)}
 }
 .project-medical{
   background:
-    radial-gradient(circle at 80% 20%,rgba(59,130,246,.22),transparent 40%),
+    radial-gradient(circle at 80% 20%,rgba(59,130,246,.15),transparent 40%),
     linear-gradient(130deg,#061326,#173452);
 }
-.project-kivra{
-  background:linear-gradient(130deg,#060C19,#0B1B3D);
-}
+.project-kivra{background:linear-gradient(130deg,#060C19,#0B1B3D)}
 .project-visual:before{
   content:"";
   position:absolute;
-  width:430px;height:430px;
-  border:1px solid rgba(255,255,255,.12);
+  width:430px;
+  height:430px;
+  border:1px solid rgba(255,255,255,.1);
   border-radius:50%;
-  right:-130px;top:-120px;
+  right:-130px;
+  top:-120px;
 }
 .browser{
   width:min(85%,760px);
   height:84%;
-  background:#F2F2F2;
+  background:#f2f2f2;
   border-radius:9px;
   overflow:hidden;
   box-shadow:0 35px 70px rgba(0,0,0,.35);
   transform:perspective(900px) rotateY(-6deg) rotateX(3deg);
-  transition:transform .8s cubic-bezier(.22,1,.36,1);
+  transition:transform .8s;
   position:relative;
   z-index:1;
 }
-.project:hover .browser{
-  transform:perspective(900px) rotateY(0) rotateX(0);
-}
+.project:hover .browser{transform:perspective(900px) rotateY(0) rotateX(0)}
 .browser-top{
   height:28px;
-  background:#E2E3E4;
+  background:#e2e3e4;
   display:flex;
   gap:6px;
   align-items:center;
   padding:0 12px;
 }
-.browser-top i{
-  width:7px;height:7px;
-  background:#B7B9BD;
-  border-radius:50%;
-}
-
-/* PRÉVIA MÉDICA */
+.browser-top i{width:7px;height:7px;background:#b7b9bd;border-radius:50%}
 .medical-preview{
   height:calc(100% - 28px);
   background:#061326;
-  color:#F6F8FC;
+  color:#f6f8fc;
   overflow:hidden;
   position:relative;
-}
-.medical-preview:before{
-  content:"";
-  position:absolute;
-  width:250px;height:250px;
-  border-radius:50%;
-  background:rgba(59,130,246,.12);
-  filter:blur(65px);
-  right:8%;top:15%;
 }
 .medical-nav{
   height:53px;
@@ -554,16 +468,11 @@ nav a:hover{color:var(--accent-soft)}
   display:block;
   font-size:7px;
   font-weight:400;
-  color:#9CB9D9;
+  color:#9cb9d9;
   letter-spacing:1.3px;
   margin-top:4px;
 }
-.medical-menu{
-  display:flex;
-  gap:18px;
-  color:#C0D0E2;
-  font-size:9px;
-}
+.medical-menu{display:flex;gap:18px;color:#c0d0e2;font-size:9px}
 .medical-main{
   height:calc(100% - 53px);
   display:grid;
@@ -576,12 +485,11 @@ nav a:hover{color:var(--accent-soft)}
 }
 .medical-copy small{
   font-size:9px;
-  color:#78C7FF;
+  color:#78c7ff;
   text-transform:uppercase;
   letter-spacing:1.5px;
 }
 .medical-copy h4{
-  font-family:"DM Sans",sans-serif;
   font-size:clamp(19px,3.2vw,40px);
   line-height:1.2;
   letter-spacing:-1px;
@@ -590,7 +498,7 @@ nav a:hover{color:var(--accent-soft)}
 }
 .medical-copy p{
   font-size:clamp(8px,1vw,11px);
-  color:#A9BDD3;
+  color:#a9bdd3;
   line-height:1.7;
   max-width:340px;
 }
@@ -598,7 +506,7 @@ nav a:hover{color:var(--accent-soft)}
   display:inline-block;
   margin-top:20px;
   padding:11px 15px;
-  background:#3B82F6;
+  background:#3b82f6;
   font-size:9px;
   font-weight:700;
   color:white;
@@ -627,56 +535,44 @@ nav a:hover{color:var(--accent-soft)}
 }
 .thermal-label{
   position:absolute;
-  top:13px;left:13px;
+  top:13px;
+  left:13px;
   font-size:8px;
   letter-spacing:1.2px;
-  color:#9DC7E9;
+  color:#9dc7e9;
 }
 .thermal-body{
   width:43%;
   height:75%;
   position:relative;
-  background:
-    radial-gradient(ellipse at 50% 28%,#F8DB62 0%,#EF653D 24%,#AB2D75 50%,#2945A5 80%);
-  clip-path:polygon(
-    43% 0%,57% 0%,65% 7%,66% 17%,
-    81% 22%,100% 45%,90% 50%,
-    73% 32%,68% 56%,65% 100%,
-    52% 100%,50% 64%,48% 100%,
-    35% 100%,32% 56%,27% 32%,
-    10% 50%,0 45%,19% 22%,
-    34% 17%,35% 7%
-  );
-  filter:drop-shadow(0 0 15px rgba(232,92,64,.35));
+  background:radial-gradient(ellipse at 50% 28%,#f8db62 0%,#ef653d 24%,#ab2d75 50%,#2945a5 80%);
+  clip-path:polygon(43% 0%,57% 0%,65% 7%,66% 17%,81% 22%,100% 45%,90% 50%,73% 32%,68% 56%,65% 100%,52% 100%,50% 64%,48% 100%,35% 100%,32% 56%,27% 32%,10% 50%,0 45%,19% 22%,34% 17%,35% 7%);
 }
 .scan-line{
   position:absolute;
-  width:100%;height:2px;
+  width:100%;
+  height:2px;
   top:20%;
-  background:#78C7FF;
-  box-shadow:0 0 12px #78C7FF;
+  background:#78c7ff;
+  box-shadow:0 0 12px #78c7ff;
   animation:scan 4s ease-in-out infinite alternate;
 }
 .thermal-reading{
   position:absolute;
-  bottom:12px;right:13px;
+  bottom:12px;
+  right:13px;
   font-size:9px;
-  color:#9DC7E9;
+  color:#9dc7e9;
 }
-.thermal-reading strong{
-  color:white;
-  font-size:16px;
-  display:block;
-}
+.thermal-reading strong{color:white;font-size:16px;display:block}
 .thermal-disclaimer{
   position:absolute;
-  bottom:10px;left:12px;
+  bottom:10px;
+  left:12px;
   font-size:7px;
-  color:#91A7C0;
+  color:#91a7c0;
   max-width:55%;
 }
-
-/* PRÉVIA KIVRA */
 .kivra-preview{
   height:calc(100% - 28px);
   display:flex;
@@ -687,31 +583,22 @@ nav a:hover{color:var(--accent-soft)}
   background:
     radial-gradient(circle at 75% 25%,rgba(127,163,194,.12),transparent 55%),
     var(--bg);
-  color:var(--white);
-  gap:17px;
+  color:var(--cream);
+  gap:16px;
   padding:20px;
 }
-.kivra-preview .brand-symbol{
-  width:clamp(65px,12vw,120px);
-  height:clamp(65px,12vw,120px);
+.kivra-preview .brand-mark{
+  width:clamp(75px,13vw,145px);
+  height:clamp(75px,13vw,145px);
 }
 .kivra-preview strong{
-  font-family:"Manrope",sans-serif;
+  font-family:Manrope,sans-serif;
   font-size:clamp(30px,6vw,65px);
-  font-weight:800;
-  letter-spacing:2px;
-}
-.kivra-preview small{
-  color:var(--accent-soft);
-  font-size:10px;
   letter-spacing:3px;
-  text-transform:uppercase;
+  font-weight:800;
 }
-.kivra-preview p{
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.6;
-}
+.kivra-preview small{font-size:10px;color:var(--accent);letter-spacing:2px}
+.kivra-preview p{font-size:12px;color:var(--muted);line-height:1.6}
 .project-info{
   display:flex;
   align-items:center;
@@ -719,16 +606,8 @@ nav a:hover{color:var(--accent-soft)}
   gap:20px;
   padding:25px 0 5px;
 }
-.project-info h3{
-  font-family:"Manrope",sans-serif;
-  font-size:27px;
-  font-weight:700;
-}
-.project-info p{
-  font-size:13px;
-  color:#63768C;
-  margin-top:7px;
-}
+.project-info h3{font-family:Manrope,sans-serif;font-size:26px;font-weight:700}
+.project-info p{font-size:13px;color:#63768c;margin-top:7px}
 .project-info a{
   display:inline-flex;
   align-items:center;
@@ -736,43 +615,26 @@ nav a:hover{color:var(--accent-soft)}
   font-size:12px;
   font-weight:700;
   letter-spacing:1px;
-  color:#476C8F;
+  color:#315a86;
   white-space:nowrap;
 }
 .project-info a:hover{text-decoration:underline}
-.portfolio-dots{
-  display:flex;
-  justify-content:center;
-  gap:9px;
-  margin-top:30px;
-}
+.portfolio-dots{display:flex;justify-content:center;gap:9px;margin-top:30px}
 .portfolio-dot{
-  width:8px;height:8px;
+  width:8px;
+  height:8px;
   border:0;
   border-radius:50%;
-  background:#B4C7DC;
+  background:#b4c7dc;
   transition:.3s;
 }
-.portfolio-dot.active{
-  width:28px;
-  border-radius:10px;
-  background:#476C8F;
-}
-.portfolio-note{
-  margin-top:25px;
-  font-size:12px;
-  line-height:1.8;
-  color:#63768C;
-}
+.portfolio-dot.active{width:28px;border-radius:10px;background:var(--accent-strong)}
+.portfolio-note{margin-top:25px;font-size:12px;line-height:1.8;color:#63768c}
 
-/* PROCESSO */
+/* Processo */
 .process-head{margin-bottom:60px}
 .process-head h2{margin-top:20px}
-.process-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:25px;
-}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
 .process-card{
   position:relative;
   border-top:1px solid var(--line);
@@ -781,68 +643,37 @@ nav a:hover{color:var(--accent-soft)}
 .process-card:before{
   content:"";
   position:absolute;
-  top:-1px;left:0;
-  height:1px;width:0;
+  top:-1px;
+  left:0;
+  height:1px;
+  width:0;
   background:var(--accent);
   transition:width .7s;
 }
 .process-card:hover:before{width:100%}
-.process-card span{
-  font-size:11px;
-  letter-spacing:2px;
-  color:var(--accent-soft);
-}
+.process-card span{font-size:11px;letter-spacing:2px;color:var(--accent)}
 .process-card h3{
-  font-family:"Manrope",sans-serif;
+  font-family:Manrope,sans-serif;
   font-size:25px;
   font-weight:700;
   margin:27px 0 14px;
 }
-.process-card p{
-  font-size:13px;
-  line-height:1.9;
-  color:var(--muted);
-}
+.process-card p{font-size:13px;line-height:1.9;color:var(--muted)}
 
-/* CONTATO */
-.contact{
-  background:var(--paper);
-  color:var(--ink);
-  text-align:center;
-}
-.contact .eyebrow{color:#476C8F}
-.contact h2{
-  max-width:850px;
-  margin:25px auto;
-}
-.contact h2 em{color:#476C8F}
+/* Contato e rodapé */
+.contact{background:var(--paper);color:#101827;text-align:center}
+.contact h2{max-width:850px;margin:25px auto}
 .contact p{
   max-width:540px;
   margin:0 auto 35px;
   font-size:15px;
   line-height:1.9;
-  color:#52647A;
+  color:#52647a;
 }
-.contact .btn-blue{
-  background:var(--bg);
-  color:white;
-}
-.contact .btn-blue:hover{
-  background:#476C8F;
-  color:white;
-}
-
-/* RODAPÉ */
-footer{
-  padding:65px 0 30px;
-  background:var(--dark);
-}
-.footer-main{
-  display:flex;
-  justify-content:space-between;
-  gap:35px;
-  padding-bottom:55px;
-}
+.contact .btn-blue{background:var(--bg);color:white}
+.contact .btn-blue:hover{background:var(--accent-strong);color:white}
+footer{padding:65px 0 30px;background:var(--deep)}
+.footer-main{display:flex;justify-content:space-between;gap:35px;padding-bottom:55px}
 .footer-brand p{
   color:var(--muted);
   font-size:13px;
@@ -851,60 +682,41 @@ footer{
   margin-top:15px;
 }
 .footer-links{display:flex;gap:65px}
-.footer-links div{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
+.footer-links div{display:flex;flex-direction:column;gap:15px}
 .footer-links strong{
-  color:var(--accent-soft);
+  color:var(--accent);
   font-size:11px;
   letter-spacing:2px;
   text-transform:uppercase;
 }
-.footer-links a{
-  color:var(--muted);
-  font-size:13px;
-}
-.footer-links a:hover{color:var(--white)}
+.footer-links a{color:var(--muted);font-size:13px}
+.footer-links a:hover{color:white}
 .footer-bottom{
   border-top:1px solid var(--line);
   padding-top:25px;
   display:flex;
   justify-content:space-between;
   gap:20px;
-  color:#94A9C3;
+  color:#94a9c3;
   font-size:11px;
 }
 
-/* ANIMAÇÕES */
+/* Animações */
 @keyframes glowMove{
   from{transform:translate(-25px,-20px)}
   to{transform:translate(25px,35px)}
 }
-@keyframes slideProgress{
-  from{width:0}
-  to{width:100%}
-}
-@keyframes marqueeMove{
-  to{transform:translateX(-50%)}
-}
-@keyframes scan{
-  from{top:15%;opacity:.5}
-  to{top:85%;opacity:1}
-}
+@keyframes slideProgress{from{width:0}to{width:100%}}
+@keyframes marqueeMove{to{transform:translateX(-50%)}}
+@keyframes scan{from{top:15%;opacity:.5}to{top:85%;opacity:1}}
 .reveal{
   opacity:0;
   transform:translateY(24px);
-  transition:opacity .9s cubic-bezier(.22,1,.36,1),
-             transform .9s cubic-bezier(.22,1,.36,1);
+  transition:opacity .9s,transform .9s;
 }
-.reveal.visible{
-  opacity:1;
-  transform:translateY(0);
-}
+.reveal.visible{opacity:1;transform:none}
 
-/* RESPONSIVIDADE */
+/* Responsividade */
 @media(max-width:900px){
   .about-grid{gap:40px}
   .service{grid-template-columns:40px 1fr 30px}
@@ -912,18 +724,27 @@ footer{
   .service-arrow{grid-column:3;grid-row:1}
   .process-grid{grid-template-columns:repeat(2,1fr)}
 }
+@media(min-width:701px) and (max-width:950px){
+  nav{gap:14px}
+  .nav-cta{padding:10px}
+  .brand{gap:8px}
+  .brand-word strong{font-size:20px}
+}
 @media(max-width:700px){
   header{height:70px}
   .container{width:calc(100% - 36px)}
   .section{padding:85px 0}
-  .brand-symbol{width:38px;height:38px}
-  .brand-name strong{font-size:20px}
-  .brand-name small{font-size:7px;letter-spacing:1.6px}
+  .section-title{letter-spacing:-1.2px}
+  .brand-mark{width:37px;height:37px}
+  .brand-word strong{font-size:19px}
+  .brand-word small{font-size:7px}
   .menu-btn{display:block}
   nav{
     display:none;
     position:absolute;
-    top:70px;left:0;right:0;
+    top:70px;
+    left:0;
+    right:0;
     background:var(--bg);
     padding:30px 22px 40px;
     flex-direction:column;
@@ -934,25 +755,13 @@ footer{
   nav.open{display:flex}
   nav a{font-size:15px}
   .nav-cta{text-align:center}
-  .hero{
-    min-height:100svh;
-    padding:115px 0 105px;
-  }
-  .hero-slider{min-height:440px}
-  .hero-slide h1{
-    font-size:clamp(42px,10.6vw,68px);
-    letter-spacing:-2px;
-  }
+  .hero{min-height:100svh;padding:115px 0 105px}
+  .hero-slider{min-height:410px}
+  .hero-slide h1{font-size:clamp(43px,10.8vw,68px);letter-spacing:-2px}
   .hero-slide p{font-size:14px}
-  .hero-actions{
-    flex-direction:column;
-    align-items:stretch;
-  }
+  .hero-actions{flex-direction:column;align-items:stretch}
   .hero-controls{gap:13px;margin-top:25px}
-  .hero-bottom .container{
-    flex-direction:column;
-    gap:7px;
-  }
+  .hero-bottom .container{flex-direction:column;gap:7px}
   .orbit{right:-480px}
   .about-grid{grid-template-columns:1fr}
   .services-header{display:block}
@@ -967,29 +776,18 @@ footer{
   .browser{width:96%;height:78%}
   .medical-nav{height:38px}
   .medical-menu{display:none}
-  .medical-main{
-    height:calc(100% - 38px);
-    gap:7px;
-    padding:5%;
-  }
-  .medical-copy h4{
-    font-size:clamp(14px,4vw,22px);
-    margin:8px 0;
-  }
+  .medical-main{height:calc(100% - 38px);gap:7px;padding:5%}
+  .medical-copy h4{font-size:clamp(14px,4vw,22px);margin:8px 0}
   .medical-copy small{font-size:7px}
   .medical-copy p{font-size:8px}
-  .medical-mini-btn{
-    padding:8px;
-    font-size:7px;
-    margin-top:10px;
-  }
+  .medical-mini-btn{padding:8px;font-size:7px;margin-top:10px}
   .thermal-panel{min-height:125px}
   .thermal-label{font-size:6px}
   .thermal-reading{font-size:7px}
   .thermal-reading strong{font-size:11px}
   .thermal-disclaimer{font-size:6px}
   .project-info{align-items:flex-start}
-  .project-info h3{font-size:24px}
+  .project-info h3{font-size:23px}
   .project-info a{font-size:10px}
   .process-grid{gap:35px 20px}
   .footer-main{flex-direction:column}
@@ -998,7 +796,7 @@ footer{
 }
 @media(max-width:380px){
   .hero-slide h1{font-size:40px}
-  .hero-slider{min-height:460px}
+  .hero-slider{min-height:440px}
   .process-grid{grid-template-columns:1fr}
   .project-info{flex-direction:column}
 }
@@ -1016,614 +814,15 @@ footer{
 
 <body>
 
-<!-- SÍMBOLO KIVRA -->
+<!-- Símbolo reutilizável: navegador + K geométrico + pixels -->
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="0" height="0"
-     style="position:absolute;overflow:hidden"
+     style="position:absolute;width:0;height:0;overflow:hidden"
      aria-hidden="true">
-  <symbol id="kivra-mark" viewBox="0 0 120 120">
-    <path class="mark-primary"
-      d="M16 96V30Q16 12 34 12H91L82 24H34Q28 24 28 32V96Q28 103 35 107V115Q16 110 16 96Z"/>
-    <circle class="mark-dots" cx="37" cy="18" r="2.5"/>
-    <circle class="mark-dots" cx="47" cy="18" r="2.5"/>
-    <circle class="mark-dots" cx="57" cy="18" r="2.5"/>
-    <rect class="mark-primary" x="36" y="37" width="27" height="28" rx="5"/>
-    <rect class="mark-primary" x="36" y="69" width="27" height="38" rx="5"/>
-    <path class="mark-primary"
-      d="M66 63L91 37H110L86 63L113 107H92L77 79L66 91Z"/>
-    <path class="mark-accent" d="M77 91L89 107H65Z"/>
-    <rect class="mark-accent" x="99" y="21" width="9" height="9" rx="2"/>
-    <rect class="mark-accent" x="109" y="7" width="11" height="11" rx="2"/>
-  </symbol>
-</svg>
-
-<!-- CABEÇALHO -->
-<header>
-<div class="container header-inner">
-  <a href="#inicio" class="brand" aria-label="KIVRA Agência Digital, início">
-    <svg class="brand-symbol brand-mark" viewBox="0 0 120 120" aria-hidden="true">
-      <use href="#kivra-mark"></use>
-    </svg>
-    <span class="brand-name">
-      <strong>KIVRA</strong>
-      <small>AGÊNCIA DIGITAL</small>
-    </span>
-  </a>
-
-  <button class="menu-btn" id="menuBtn"
-    aria-label="Abrir menu"
-    aria-expanded="false"
-    aria-controls="nav">☰</button>
-
-  <nav id="nav" aria-label="Menu principal">
-    <a href="#sobre">A agência</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#projetos">Projetos</a>
-    <a href="#processo">Processo</a>
-    <a href="#contato" class="nav-cta">Iniciar um projeto ↗</a>
-  </nav>
-</div>
-</header>
-
-<main>
-
-<!-- HERO -->
-<section class="hero" id="inicio">
-<div class="tech-grid"></div>
-<div class="hero-glow"></div>
-<div class="orbit"></div>
-
-<div class="container hero-content">
-<div class="hero-slider" aria-label="Apresentação KIVRA">
-
-  <div class="hero-slide active" aria-hidden="false">
-    <div class="eyebrow">KIVRA · Agência Digital</div>
-    <h1>Sua marca merece<br>mais do que<br><em>estar online.</em></h1>
-    <p>Criamos sites, conteúdos e estratégias digitais que unem criatividade, tecnologia e identidade para fortalecer a presença da sua marca.</p>
-    <div class="hero-actions">
-      <a href="#servicos" class="btn btn-blue">Conhecer soluções ↗</a>
-      <a href="#projetos" class="btn btn-line">Explorar projetos ↓</a>
-    </div>
-  </div>
-
-  <div class="hero-slide" aria-hidden="true">
-    <div class="eyebrow">Creative digital experiences</div>
-    <h1>Não basta aparecer.<br>É preciso<br><em>ser lembrado.</em></h1>
-    <p>Construímos experiências digitais e conteúdos que comunicam a personalidade de cada negócio e criam conexões com seu público.</p>
-    <div class="hero-actions">
-      <a href="#sobre" class="btn btn-blue">Conheça a KIVRA ↗</a>
-      <a href="#servicos" class="btn btn-line">Nossos serviços ↓</a>
-    </div>
-  </div>
-
-  <div class="hero-slide" aria-hidden="true">
-    <div class="eyebrow">Design · Content · Strategy</div>
-    <h1>Ideias criativas.<br>Estratégia digital.<br><em>Marcas com identidade.</em></h1>
-    <p>Do desenvolvimento do seu site à comunicação nas redes sociais, pensamos em cada detalhe da sua presença digital.</p>
-    <div class="hero-actions">
-      <a href="#contato" class="btn btn-blue">Iniciar meu projeto ↗</a>
-      <a href="#processo" class="btn btn-line">Como trabalhamos ↓</a>
-    </div>
-  </div>
-
-</div>
-
-<div class="hero-controls">
-  <span class="slide-counter" id="heroCounter">01 / 03</span>
-  <div class="progress-track">
-    <div class="progress-fill" id="heroProgress"></div>
-  </div>
-  <div class="hero-arrows">
-    <button class="arrow-btn" id="heroPrev" aria-label="Slide anterior">←</button>
-    <button class="arrow-btn" id="heroNext" aria-label="Próximo slide">→</button>
-  </div>
-</div>
-</div>
-
-<div class="hero-bottom">
-  <div class="container">
-    <span>Websites · Social Media · Marketing Digital</span>
-    <span>Explore ↓</span>
-  </div>
-</div>
-</section>
-
-<!-- FAIXA ANIMADA -->
-<div class="marquee" aria-label="Especialidades KIVRA">
-  <div class="marquee-track">
-    <div class="marquee-group">
-      <span>WEB DESIGN</span><b>✳</b>
-      <span>SOCIAL MEDIA</span><b>✳</b>
-      <span>CONTENT CREATION</span><b>✳</b>
-      <span>DIGITAL STRATEGY</span><b>✳</b>
-    </div>
-    <div class="marquee-group" aria-hidden="true">
-      <span>WEB DESIGN</span><b>✳</b>
-      <span>SOCIAL MEDIA</span><b>✳</b>
-      <span>CONTENT CREATION</span><b>✳</b>
-      <span>DIGITAL STRATEGY</span><b>✳</b>
-    </div>
-  </div>
-</div>
-
-<!-- SOBRE -->
-<section class="section about" id="sobre">
-<div class="container about-grid">
-  <div class="reveal">
-    <div class="eyebrow">01 / A agência</div>
-    <h2 class="section-title">
-      Criatividade com<br><em>intenção.</em><br>
-      Presença com<br>personalidade.
-    </h2>
-  </div>
-  <div class="about-copy reveal">
-    <p>A KIVRA é uma agência digital independente que une desenvolvimento web, criação de conteúdo e estratégias de comunicação para marcas que desejam construir uma presença digital autêntica.</p>
-    <p>Acreditamos que estar no digital vai além de ter um site bonito ou publicar nas redes sociais. É preciso comunicar com clareza, construir identidade e criar conexões com as pessoas certas.</p>
-    <p>Nosso propósito é transformar ideias em experiências digitais que valorizam a essência de cada negócio.</p>
-    <div class="about-line">KIVRA Agência Digital — Creative by design.</div>
-  </div>
-</div>
-</section>
-
-<!-- SERVIÇOS -->
-<section class="section" id="servicos">
-<div class="container">
-  <div class="services-header reveal">
-    <div>
-      <div class="eyebrow">02 / Especialidades</div>
-      <h2 class="section-title">Sua marca em<br><em>todas as telas.</em></h2>
-    </div>
-    <p class="muted">Soluções que conectam design, tecnologia e comunicação para construir uma presença digital consistente.</p>
-  </div>
-
-  <div class="service-list">
-    <div class="service reveal">
-      <span class="service-num">01</span>
-      <h3>Desenvolvimento de sites</h3>
-      <p>Sites institucionais, landing pages e redesign, com foco em identidade visual, navegação e experiência do usuário.</p>
-      <span class="service-arrow">↗</span>
-    </div>
-    <div class="service reveal">
-      <span class="service-num">02</span>
-      <h3>Gestão de redes sociais</h3>
-      <p>Planejamento de publicações, organização editorial e comunicação alinhada ao posicionamento de cada marca.</p>
-      <span class="service-arrow">↗</span>
-    </div>
-    <div class="service reveal">
-      <span class="service-num">03</span>
-      <h3>Criação de conteúdo</h3>
-      <p>Posts, carrosséis, roteiros e vídeos criativos para apresentar produtos, serviços e histórias de forma envolvente.</p>
-      <span class="service-arrow">↗</span>
-    </div>
-    <div class="service reveal">
-      <span class="service-num">04</span>
-      <h3>Marketing digital</h3>
-      <p>Estratégias de comunicação, posicionamento e conteúdo para fortalecer a presença digital e o relacionamento com o público.</p>
-      <span class="service-arrow">↗</span>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- FRASE DE DESTAQUE -->
-<section class="statement">
-<div class="container reveal">
-  <p>Não se trata apenas de estar presente.<br>Trata-se de construir uma marca que <em>as pessoas reconheçam e lembrem.</em></p>
-</div>
-</section>
-
-<!-- PORTFÓLIO -->
-<section class="section portfolio" id="projetos">
-<div class="container">
-
-<div class="portfolio-header reveal">
-  <div>
-    <div class="eyebrow">03 / Portfólio</div>
-    <h2 class="section-title">Projetos que traduzem<br><em>ideias em presença.</em></h2>
-  </div>
-  <div class="portfolio-nav">
-    <button id="projectPrev" aria-label="Projeto anterior">←</button>
-    <button id="projectNext" aria-label="Próximo projeto">→</button>
-  </div>
-</div>
-
-<div class="portfolio-window" id="portfolioWindow" aria-label="Carrossel de projetos">
-<div class="portfolio-track" id="portfolioTrack">
-
-<!-- PROJETO DRA. ILDÉLIA -->
-<article class="project">
-  <div class="project-visual project-medical">
-    <div class="browser">
-      <div class="browser-top"><i></i><i></i><i></i></div>
-      <div class="medical-preview">
-        <div class="medical-nav">
-          <div class="medical-brand">
-            ϟ DRA. ILDÉLIA
-            <span>ORTOPEDIA E SAÚDE MUSCULOESQUELÉTICA</span>
-          </div>
-          <div class="medical-menu">
-            <span>Serviços</span>
-            <span>Dra. Ildélia</span>
-            <span>Scan termográfico</span>
-          </div>
-        </div>
-        <div class="medical-main">
-          <div class="medical-copy">
-            <small>Medicina integrada · Araçatuba SP</small>
-            <h4>Saúde em movimento.<br>Cuidado com propósito.</h4>
-            <p>Cuidado especializado em ortopedia e medicina esportiva.</p>
-            <span class="medical-mini-btn">Agendar atendimento ↗</span>
-          </div>
-          <div class="thermal-panel">
-            <div class="thermal-label">SCAN TÉRMICO · VISTA FRONTAL</div>
-            <div class="thermal-body"></div>
-            <div class="scan-line"></div>
-            <div class="thermal-reading">
-              <strong>36.1°C</strong>
-              VISUALIZAÇÃO
-            </div>
-            <div class="thermal-disclaimer">
-              Ilustração visual, não representa medição clínica.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <h3>Dra. Ildélia</h3>
-      <p>Saúde · Website institucional</p>
-    </div>
-    <a href="https://fusco-performance-nu.vercel.app"
-       target="_blank" rel="noopener noreferrer">
-       VISITAR SITE ↗
-    </a>
-  </div>
-</article>
-
-<!-- PROJETO KIVRA -->
-<article class="project">
-  <div class="project-visual project-kivra">
-    <div class="browser">
-      <div class="browser-top"><i></i><i></i><i></i></div>
-      <div class="kivra-preview">
-        <svg class="brand-symbol brand-mark" viewBox="0 0 120 120" aria-hidden="true">
-          <use href="#kivra-mark"></use>
-        </svg>
-        <strong>KIVRA</strong>
-        <small>AGÊNCIA DIGITAL</small>
-        <p>Websites · Social Media · Marketing Digital</p>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <h3>KIVRA Agência Digital</h3>
-      <p>Branding digital · Website autoral</p>
-    </div>
-    <a href="#inicio">EXPLORAR PROJETO ↗</a>
-  </div>
-</article>
-
-</div>
-</div>
-
-<div class="portfolio-dots">
-  <button class="portfolio-dot active" data-slide="0"
-    aria-label="Ver projeto Dra. Ildélia"
-    aria-current="true"></button>
-  <button class="portfolio-dot" data-slide="1"
-    aria-label="Ver projeto KIVRA"
-    aria-current="false"></button>
-</div>
-
-<p class="portfolio-note">Portfólio em construção. As prévias são representações visuais dos projetos; utilize “Visitar site” para conhecer a versão publicada.</p>
-
-</div>
-</section>
-
-<!-- PROCESSO -->
-<section class="section" id="processo">
-<div class="container">
-  <div class="process-head reveal">
-    <div class="eyebrow">04 / Nosso processo</div>
-    <h2 class="section-title">Da primeira ideia<br>à <em>experiência final.</em></h2>
-  </div>
-  <div class="process-grid">
-    <div class="process-card reveal">
-      <span>01 / DESCOBERTA</span>
-      <h3>Entender</h3>
-      <p>Conhecemos seu negócio, seu público e os objetivos da sua comunicação.</p>
-    </div>
-    <div class="process-card reveal">
-      <span>02 / ESTRATÉGIA</span>
-      <h3>Planejar</h3>
-      <p>Definimos a direção criativa, o conteúdo e as soluções mais adequadas ao projeto.</p>
-    </div>
-    <div class="process-card reveal">
-      <span>03 / CRIAÇÃO</span>
-      <h3>Criar</h3>
-      <p>Desenvolvemos sites, conteúdos e materiais digitais alinhados à identidade da marca.</p>
-    </div>
-    <div class="process-card reveal">
-      <span>04 / ENTREGA</span>
-      <h3>Evoluir</h3>
-      <p>Revisamos e entregamos o projeto, acompanhando os próximos passos conforme o serviço contratado.</p>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- CONTATO -->
-<section class="section contact" id="contato">
-<div class="container reveal">
-  <div class="eyebrow">05 / Vamos conversar?</div>
-  <h2 class="section-title">Sua marca tem uma história.<br><em>Vamos fazer ela aparecer.</em></h2>
-  <p>Precisa de um site, conteúdo para redes sociais ou uma estratégia de comunicação? Conte sua ideia e vamos encontrar a solução mais adequada para sua marca.</p>
-  <a class="btn btn-blue"
-     href="https://wa.me/5518930852612?text=Ol%C3%A1%21%20Conheci%20a%20KIVRA%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
-     target="_blank" rel="noopener noreferrer">
-     INICIAR UMA CONVERSA ↗
-  </a>
-</div>
-</section>
-
-</main>
-
-<!-- RODAPÉ -->
-<footer>
-<div class="container">
-  <div class="footer-main">
-    <div class="footer-brand">
-      <a class="brand" href="#inicio" aria-label="KIVRA Agência Digital, início">
-        <svg class="brand-symbol brand-mark" viewBox="0 0 120 120" aria-hidden="true">
-          <use href="#kivra-mark"></use>
-        </svg>
-        <span class="brand-name">
-          <strong>KIVRA</strong>
-          <small>AGÊNCIA DIGITAL</small>
-        </span>
-      </a>
-      <p>Sites, redes sociais e marketing digital para marcas com identidade.</p>
-    </div>
-    <div class="footer-links">
-      <div>
-        <strong>Explore</strong>
-        <a href="#sobre">A agência</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#processo">Processo</a>
-      </div>
-      <div>
-        <strong>Contato</strong>
-        <a href="https://wa.me/5518930852612"
-           target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-        <a href="#contato">Iniciar projeto</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© <span id="year"></span> KIVRA Agência Digital. Todos os direitos reservados.</span>
-    <span>Creative by design. Digital by nature.</span>
-  </div>
-</div>
-</footer>
-
-<script>
-/* MENU */
-const menuBtn=document.getElementById("menuBtn");
-const nav=document.getElementById("nav");
-
-function closeMenu(){
-  nav.classList.remove("open");
-  document.body.classList.remove("menu-open");
-  menuBtn.setAttribute("aria-expanded","false");
-  menuBtn.setAttribute("aria-label","Abrir menu");
-  menuBtn.textContent="☰";
-}
-
-menuBtn.addEventListener("click",()=>{
-  const open=nav.classList.toggle("open");
-  document.body.classList.toggle("menu-open",open);
-  menuBtn.setAttribute("aria-expanded",String(open));
-  menuBtn.setAttribute("aria-label",open?"Fechar menu":"Abrir menu");
-  menuBtn.textContent=open?"✕":"☰";
-});
-
-nav.querySelectorAll("a").forEach(a=>
-  a.addEventListener("click",closeMenu)
-);
-
-document.addEventListener("keydown",e=>{
-  if(e.key==="Escape")closeMenu();
-});
-
-document.getElementById("year").textContent=
-  new Date().getFullYear();
-
-/* MOVIMENTO */
-const reducedMotion=window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
-);
-
-/* SLIDER PRINCIPAL */
-const heroSlides=[...document.querySelectorAll(".hero-slide")];
-const heroCounter=document.getElementById("heroCounter");
-const heroProgress=document.getElementById("heroProgress");
-const heroSection=document.querySelector(".hero");
-
-let heroIndex=0;
-let heroTimer=null;
-let heroPausedByInteraction=false;
-
-function showHero(index){
-  heroIndex=(index+heroSlides.length)%heroSlides.length;
-
-  heroSlides.forEach((slide,i)=>{
-    const active=i===heroIndex;
-    slide.classList.toggle("active",active);
-    slide.setAttribute("aria-hidden",String(!active));
-    slide.querySelectorAll("a").forEach(a=>{
-      a.tabIndex=active?0:-1;
-    });
-  });
-
-  heroCounter.textContent=
-    String(heroIndex+1).padStart(2,"0")+
-    " / "+
-    String(heroSlides.length).padStart(2,"0");
-
-  heroProgress.classList.remove("running");
-  void heroProgress.offsetWidth;
-}
-
-function stopHero(){
-  clearInterval(heroTimer);
-  heroTimer=null;
-  heroProgress.classList.remove("running");
-}
-
-function startHero(){
-  stopHero();
-  if(
-    reducedMotion.matches ||
-    document.hidden ||
-    heroPausedByInteraction
-  )return;
-
-  heroProgress.classList.add("running");
-
-  heroTimer=setInterval(()=>{
-    showHero(heroIndex+1);
-    heroProgress.classList.add("running");
-  },6000);
-}
-
-function changeHero(direction){
-  showHero(heroIndex+direction);
-  startHero();
-}
-
-document.getElementById("heroPrev").addEventListener(
-  "click",()=>changeHero(-1)
-);
-document.getElementById("heroNext").addEventListener(
-  "click",()=>changeHero(1)
-);
-
-heroSection.addEventListener("mouseenter",()=>{
-  heroPausedByInteraction=true;
-  stopHero();
-});
-heroSection.addEventListener("mouseleave",()=>{
-  heroPausedByInteraction=false;
-  startHero();
-});
-heroSection.addEventListener("focusin",()=>{
-  heroPausedByInteraction=true;
-  stopHero();
-});
-heroSection.addEventListener("focusout",e=>{
-  if(!heroSection.contains(e.relatedTarget)){
-    heroPausedByInteraction=false;
-    startHero();
-  }
-});
-document.addEventListener("visibilitychange",()=>{
-  if(document.hidden)stopHero();
-  else startHero();
-});
-reducedMotion.addEventListener("change",()=>{
-  showHero(heroIndex);
-  startHero();
-});
-
-showHero(0);
-startHero();
-
-/* CARROSSEL DO PORTFÓLIO */
-const portfolioTrack=document.getElementById("portfolioTrack");
-const projects=[...portfolioTrack.querySelectorAll(".project")];
-const dots=[...document.querySelectorAll(".portfolio-dot")];
-const portfolioWindow=document.getElementById("portfolioWindow");
-
-let projectIndex=0;
-let touchStartX=0;
-
-function showProject(index){
-  projectIndex=(index+projects.length)%projects.length;
-  portfolioTrack.style.transform=
-    `translateX(-${projectIndex*100}%)`;
-
-  projects.forEach((project,i)=>{
-    const active=i===projectIndex;
-    project.setAttribute("aria-hidden",String(!active));
-    project.querySelectorAll("a").forEach(a=>{
-      a.tabIndex=active?0:-1;
-    });
-  });
-
-  dots.forEach((dot,i)=>{
-    const active=i===projectIndex;
-    dot.classList.toggle("active",active);
-    dot.setAttribute("aria-current",String(active));
-  });
-}
-
-document.getElementById("projectPrev").addEventListener(
-  "click",()=>showProject(projectIndex-1)
-);
-document.getElementById("projectNext").addEventListener(
-  "click",()=>showProject(projectIndex+1)
-);
-
-dots.forEach(dot=>{
-  dot.addEventListener("click",()=>{
-    showProject(Number(dot.dataset.slide));
-  });
-});
-
-portfolioWindow.addEventListener("touchstart",e=>{
-  touchStartX=e.changedTouches[0].screenX;
-},{passive:true});
-
-portfolioWindow.addEventListener("touchend",e=>{
-  const difference=e.changedTouches[0].screenX-touchStartX;
-  if(Math.abs(difference)>55){
-    showProject(projectIndex+(difference<0?1:-1));
-  }
-},{passive:true});
-
-showProject(0);
-
-/* ANIMAÇÕES DE ROLAGEM */
-const revealElements=document.querySelectorAll(".reveal");
-
-if("IntersectionObserver" in window && !reducedMotion.matches){
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },{
-    threshold:.08,
-    rootMargin:"0px 0px 30px 0px"
-  });
-
-  revealElements.forEach(el=>observer.observe(el));
-}else{
-  revealElements.forEach(el=>el.classList.add("visible"));
-}
-
-reducedMotion.addEventListener("change",()=>{
-  if(reducedMotion.matches){
-    revealElements.forEach(el=>el.classList.add("visible"));
-  }
-});
-</script>
-
-</body>
-</html>
+  <symbol id="kivra-symbol" viewBox="0 0 120 120">
+    <path fill="currentColor" d="M22 103C13 99 10 93 10 83V30C10 17 18 10 31 10H83L76 19H31C23 19 19 24 19 32V83C19 89 20 92 22 94Z"/>
+    <circle cx="31" cy="15" r="2.2" fill="#0B1B3D"/>
+    <circle cx="40" cy="15" r="2.2" fill="#0B1B3D"/>
+    <circle cx="49" cy="15" r="2.2" fill="#0B1B3D"/>
+    <rect x="26" y="34" width="28" height="28" rx="5" fill="currentColor"/>
+    <rect x="26" y="66" width="28" height="38" rx="5" fill="currentColor"/>
+    <path fill="currentColor" d="M57 60L82 
